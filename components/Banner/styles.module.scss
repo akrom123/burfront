@@ -31,13 +31,20 @@
 
                 button {
                     &:before {
-                        display: none;
+                        height: 4px;
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        top: 1px;
+                        background-color: #ffffff;
+                        content: '';
+                        opacity: 1 !important;
                     }
 
+                    position: relative;
                     padding: 0;
-                    height: 1px;
+                    height: 6px;
                     width: 200px;
-                    background-color: #ffffff;
                 }
             }
 
@@ -74,6 +81,7 @@
         font-size: 52px;
         font-weight: 800;
     }
+
     img {
         flex-shrink: 1;
 
@@ -83,30 +91,41 @@
 @media(max-width: 767px) {
     .banner {
         padding-top: 96px;
+
         &Slider {
             padding-left: 25px;
             padding-right: 25px;
             :global(.slick-dots) {
-                display: none !important;
+                li {
+                    button {
+                        width: 50px;
+                    }
+                }
             }
         }
+
         &Item {
             flex-direction: column;
+
             img {
                 max-width: 100%;
                 height: auto;
             }
         }
+
         &Content {
             gap: 12px;
         }
+
         &Text {
             gap: 12px;
             width: auto;
         }
+
         &Heading {
             font-size: 32px;
         }
+
         &Description {
             font-size: 15px;
         }

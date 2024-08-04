@@ -22,6 +22,7 @@
         background-color: rgba(#D01A1A, .33);
         flex-grow: 0;
         min-width: 150px;
+
         &:after {
             position: absolute;
             content: "";
@@ -88,7 +89,7 @@
         justify-content: center;
         box-shadow: 0px 4px 107.6px #FBC04E;
     }
-    
+
     &Button {
         align-items: center;
         display: flex;
@@ -107,49 +108,45 @@
     .features {
         display: grid;
         gap: 8px;
-        grid-template-areas: 'live sport crash'
-        'live dice more';
-        overflow-x: auto;
         height: auto;
         padding-left: 24px;
         padding-right: 24px;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .feature {
-        min-width: 160px;
         padding: 20px;
         gap: 7px;
+
+        &Live {
+            &:after {
+                background-size: 100px;
+                background-position: 53px 60px;
+            }
+        }
+
         svg {
             width: 30px;
             height: 30px;
         }
+
         &Content {
             gap: 6px;
         }
+
         &Title {
             font-size: 18px;
         }
+
         &Description {
             font-size: 11px;
         }
-        &Live {
-            grid-area: live;
-        }
-        &Sport {
-            grid-area: sport;
-        }
-        &Dice {
-            grid-area: dice;
-        }
-        &Crash {
-            grid-area: crash;
-        }
-        &More {
-            grid-area: more;
-        }
+
         &Play {
             display: none;
         }
+
         &Button {
             height: 33px;
             font-size: 12px;

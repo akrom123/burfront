@@ -12,13 +12,13 @@ export const Features: FC = () => {
                 <div className={styles.featureDescription}>Игры в режиме live</div>
             </div>
         </div>
-        <div className={`${styles.feature} ${styles.featureSport}`}>
+        {/* <div className={`${styles.feature} ${styles.featureSport}`}>
             <Icon name={'football'} size={46} />
             <div className={styles.featureContent}>
                 <div className={styles.featureTitle}>Sport</div>
                 <div className={styles.featureDescription}>Ставки на различные виды спорта</div>
             </div>
-        </div>
+        </div> */}
         <div className={`${styles.feature} ${styles.featureDice}`}>
             <Icon name={'dice'} size={46} />
             <div className={styles.featureContent}>
