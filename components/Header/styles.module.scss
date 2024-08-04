@@ -102,6 +102,8 @@
         height: 61px;
         padding: 0 13px;
         align-items: center;
+        flex-shrink: 0;
+        gap: 16px;
 
         &Logo {
             width: 115px;
@@ -112,8 +114,9 @@
         }
 
         &Left {
+            gap: 16px;
             border: 0;
-            gap: 20px;
+            padding: 0;
         }
 
         &Balance {
@@ -151,6 +154,7 @@
             flex-direction: column;
             gap: 44px;
             padding-bottom: 46px;
+            overflow: auto;
 
             &Content {
                 display: flex;

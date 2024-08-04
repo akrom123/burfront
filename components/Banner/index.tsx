@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '../Button'
+import { Button } from '../ui/Button'
 import { Heading } from '../Heading'
 import styles from './styles.module.scss'
 import Image from 'next/image'

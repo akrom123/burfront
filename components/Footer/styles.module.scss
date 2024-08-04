@@ -114,13 +114,15 @@
         }
         &Button {
             border-radius: 8px;
-            text-indent: -9999px;
             gap: 0;
             width: 56px;
             height: 56px;
             padding: 0;
             align-items: center;
             justify-content: center;
+            span {
+                display: none;
+            }
         }
     }
 }

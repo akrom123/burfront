@@ -4,9 +4,9 @@ import { FC, useEffect, useState } from "react"
 import Link from 'next/link'
 import styles from './styles.module.scss'
 import { LangSwitcher } from "./LangSwitcher"
-import { Logo } from "../Logo"
-import { Button } from "../Button"
-import { Icon } from "../Icon"
+import { Logo } from "../ui/Logo"
+import { Button } from "../ui/Button"
+import { Icon } from "../ui/Icon"
 import { useMediaQuery } from "@/hooks"
 import { Footer } from "../Footer"
 

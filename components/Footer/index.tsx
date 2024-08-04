@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Icon } from '../Icon';
-import { Logo } from '../Logo';
+import { Icon } from '../ui/Icon';
+import { Logo } from '../ui/Logo';
 import styles from './styles.module.scss';
 import { FC } from 'react';
 
@@ -26,11 +26,11 @@ export const Footer: FC<IProps> = ({ copyright = true }) => {
                 <div className={styles.footerButtons}>
                     <a href="/" className={styles.footerButton}>
                         <Icon name="telegram" />
-                        Telegram
+                        <span>Telegram</span>
                     </a>
                     <a href="/" className={styles.footerButton}>
                         <Icon name="vk" />
-                        ВКонтакте
+                        <span>ВКонтакте</span>
                     </a>
                 </div>
             </div>

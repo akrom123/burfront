@@ -45,3 +45,9 @@ a {
   flex-direction: column;
   gap: 50px;
 }
+
+@media (max-width: 767px) {
+  .container {
+    gap: 30px;
+  }
+}

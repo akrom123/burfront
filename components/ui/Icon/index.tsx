@@ -11,12 +11,12 @@ interface IProps {
 }
 
 //@ts-ignore
-require.context('!svg-react-loader!../../assets/icon', true, /\.svg$/)
+require.context('!svg-react-loader!../../../assets/icon', true, /\.svg$/)
   .keys()
   .forEach(async (key: string) => {
     key = key.replace(/^\.\/(.*)\.svg$/, '$1');
     const name = key.replace('/', '-');
-    iconsCache[name] = require(`!svg-react-loader!../../assets/icon/${key}.svg`).default;
+    iconsCache[name] = require(`!svg-react-loader!../../../assets/icon/${key}.svg`).default;
   });
 
 export const iconSize = {

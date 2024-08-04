@@ -3,7 +3,7 @@
 import { FC, useState } from "react";
 import ClickAwayListener from 'react-click-away-listener';
 import styles from './styles.module.scss';
-import { Icon } from "../../Icon";
+import { Icon } from "../../ui/Icon";
 
 enum Lang {
     en = 'en',

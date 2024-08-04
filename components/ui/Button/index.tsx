@@ -16,9 +16,9 @@ const variants = {
 }
 
 
-export const Button: FC<IProps> = ({ variant = 'primary', icon, children, ...props }) => {
+export const Button: FC<IProps> = ({ variant = 'primary', icon, children, className = '', ...props }) => {
     return (
-        <button className={`${styles.button} ${variants[variant]} ${icon && !children ? styles.buttonSquare : ''}`} {...props}>
+        <button className={`${styles.button} ${variants[variant]} ${icon && !children ? styles.buttonSquare : ''} ${className}`} {...props}>
             {children}
             {icon}
         </button>

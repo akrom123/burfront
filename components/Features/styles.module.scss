@@ -1,0 +1,160 @@
+.features {
+    display: flex;
+    gap: 14px;
+    height: 228px;
+}
+
+.feature {
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid #000;
+    padding: 25px 25px 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    overflow: hidden;
+    flex-grow: 1;
+
+    &Live {
+        padding: 20px 12px;
+        border-color: #D01A1A;
+        background-color: rgba(#D01A1A, .33);
+        flex-grow: 0;
+        min-width: 150px;
+        &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('/images/feature-live.png') no-repeat;
+            background-size: 220px;
+            background-position: -14px 92px;
+        }
+    }
+
+    &Sport {
+        border-color: #9CEB76;
+        color: #9CEB76;
+        background-color: rgba(#9CEB76, 0.11);
+    }
+
+    &Dice {
+        border-color: #6372FF;
+        color: #6372FF;
+        background-color: rgba(#6372FF, 0.11);
+    }
+
+    &Crash {
+        border-color: #FBC04E;
+        color: #FBC04E;
+        background-color: rgba(#FBC04E, 0.11);
+    }
+
+    &More {
+        border-color: #373A3D;
+        background-color: var(--color-main-bg);
+    }
+
+    &Content {
+        color: var(--color-text);
+        position: relative;
+    }
+
+    &Title {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    &Description {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+
+    &Play {
+        width: 77px;
+        height: 77px;
+        border-radius: 39px;
+        background-color: #FBC04E;
+        color: var(--color-black2);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 107.6px #FBC04E;
+    }
+    
+    &Button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border: 1px solid rgba(white, 0.13);
+        background-color: rgba(white, 0.04);
+        font-size: 14px;
+        height: 59px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        width: 100%;
+    }
+}
+
+@media(max-width:767px) {
+    .features {
+        display: grid;
+        gap: 8px;
+        grid-template-areas: 'live sport crash'
+        'live dice more';
+        overflow-x: auto;
+        height: auto;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .feature {
+        min-width: 160px;
+        padding: 20px;
+        gap: 7px;
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+        &Content {
+            gap: 6px;
+        }
+        &Title {
+            font-size: 18px;
+        }
+        &Description {
+            font-size: 11px;
+        }
+        &Live {
+            grid-area: live;
+        }
+        &Sport {
+            grid-area: sport;
+        }
+        &Dice {
+            grid-area: dice;
+        }
+        &Crash {
+            grid-area: crash;
+        }
+        &More {
+            grid-area: more;
+        }
+        &Play {
+            display: none;
+        }
+        &Button {
+            height: 33px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+    }
+
+}

@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { Card } from "../Card"
+import { Card } from "../ui/Card"
 import styles from './styles.module.scss'
-import { Button } from "../Button";
-import { MoreBtn } from "../MoreBtn";
+import { Button } from "../ui/Button";
+import { MoreBtn } from "../ui/MoreBtn";
 
 export const Promotions = () => {
     return <Card title="Promotions" actions={<MoreBtn>See all</MoreBtn>}>
