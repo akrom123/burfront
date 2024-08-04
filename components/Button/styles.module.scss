@@ -1,0 +1,52 @@
+.button {
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &Primary {
+        color: var(--color-black);
+        background-color: var(--color-gold);
+        height: 59px;
+        padding: 0 50px;
+        text-transform: uppercase;
+    }
+
+    &Secondary {
+        background-color: #FBC04E10;
+        border: 1px solid var(--color-border);
+        height: 59px;
+        padding: 0 50px;
+        text-transform: uppercase;
+        color: var(--color-text);
+        text-transform: uppercase;
+    }
+
+    &Transparent {
+        padding: 21px 51px;
+        height: 59px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 8px;
+        color: #ffffff;
+        backdrop-filter: blur(6px);
+        text-transform: uppercase;
+
+    }
+
+    &Square {
+        padding: 0;
+        width: 59px;
+    }
+}
+
+@media (max-width: 767px) {
+    .button {
+        &Square {
+            width: 42px;
+            height: 42px;
+        }
+    }
+}

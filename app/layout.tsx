@@ -1,8 +1,59 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
+import localFont from 'next/font/local'
+import { Header } from "@/components/Header";
+import { Banner } from "@/components/Banner";
+import { Footer } from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const sfProTextFont = localFont({
+  src: [
+    // {
+    //   path: '../assets/fonts/subset-SFProText-Black.woff2',
+    //   weight: '900',
+    //   style: 'normal',
+    // },
+    {
+      path: '../assets/fonts/subset-SFProText-Bold.woff2',
+      weight: 'bold',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/subset-SFProText-Heavy.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/subset-SFProText-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/subset-SFProText-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/subset-SFProText-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/subset-SFProText-Bold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/subset-SFProText-Heavy.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/subset-SFProText-Black.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+  ]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +66,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html>
+      <body className={sfProTextFont.className}>
+        <Header />
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 }

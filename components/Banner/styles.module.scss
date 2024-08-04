@@ -1,0 +1,114 @@
+.banner {
+    margin-bottom: 34px;
+    margin-top: -80px;
+    padding-top: 75px;
+    background: var(--color-bg) url('/images/banner-bg.jpg') center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 20px 20px;
+
+    &Slider {
+        max-width: var(--container-width);
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+        :global(.slick-dots) {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            list-style: none;
+            display: flex !important;
+            width: auto;
+            gap: 18px;
+
+            li {
+                width: auto;
+                height: auto;
+                margin: 0;
+                opacity: 0.13;
+
+                button {
+                    &:before {
+                        display: none;
+                    }
+
+                    padding: 0;
+                    height: 1px;
+                    width: 200px;
+                    background-color: #ffffff;
+                }
+            }
+
+            :global(.slick-active) {
+                opacity: 1;
+            }
+        }
+    }
+
+    &Item {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &Content {
+        flex-direction: column;
+        gap: 36px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &Text {
+        flex-shrink: 0;
+        flex-grow: 1;
+        width: 545px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &Heading {
+        font-size: 52px;
+        font-weight: 800;
+    }
+    img {
+        flex-shrink: 1;
+
+    }
+}
+
+@media(max-width: 767px) {
+    .banner {
+        padding-top: 96px;
+        &Slider {
+            padding-left: 25px;
+            padding-right: 25px;
+            :global(.slick-dots) {
+                display: none !important;
+            }
+        }
+        &Item {
+            flex-direction: column;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        &Content {
+            gap: 12px;
+        }
+        &Text {
+            gap: 12px;
+            width: auto;
+        }
+        &Heading {
+            font-size: 32px;
+        }
+        &Description {
+            font-size: 15px;
+        }
+    }
+}

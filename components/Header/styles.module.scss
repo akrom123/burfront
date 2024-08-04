@@ -1,0 +1,188 @@
+.header {
+    display: flex;
+    height: 59px;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+    margin-top: 20px;
+
+    &Left {
+        display: flex;
+        background-color: #242527;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        align-items: center;
+        gap: 62px;
+        padding: 0 30px 0 16px;
+        flex-grow: 1;
+    }
+
+    &Nav {
+        display: flex;
+
+        &Item {
+            text-transform: uppercase;
+            padding: 15px 22px;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: var(--border-radius);
+
+            &:hover {
+                background: #323336;
+                border-color: #3F444B;
+            }
+        }
+    }
+
+    &Balance {
+        position: relative;
+        padding: 0 20px 0 35px;
+        border: 1px solid var(--color-gold);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        color: var(--color-gold);
+
+        &:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: '';
+            background: var(--color-gold);
+            opacity: 0.1;
+        }
+
+        &Icon {
+            width: 75px;
+            height: 75px;
+            background: url('/images/coin-balance.png') no-repeat;
+            position: absolute;
+            top: 2px;
+            left: -32px;
+            background-size: contain;
+        }
+
+        &Button {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            border-radius: 14px;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--color-gold);
+            color: #242527;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            display: flex;
+
+            &:before {
+                content: '+';
+                font-size: 20px;
+                height: 23px;
+                font-weight: 100;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .header {
+        margin: 12px 12px 0;
+        background-color: #242527;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        position: relative;
+        height: 61px;
+        padding: 0 13px;
+        align-items: center;
+
+        &Logo {
+            width: 115px;
+        }
+
+        &Burger {
+            color: #676767;
+        }
+
+        &Left {
+            border: 0;
+            gap: 20px;
+        }
+
+        &Balance {
+            height: 42px;
+            font-size: 12px;
+            padding: 0 20px 0 25px;
+
+            &Icon {
+                width: 50px;
+                height: 50px;
+                left: -20px;
+            }
+
+            &Button {
+                width: 19px;
+                height: 19px;
+                right: -9px;
+
+                &:before {
+                    font-size: 18px;
+                    height: 20px;
+                }
+            }
+        }
+
+        &Mobile {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            background-color: var(--color-main-bg);
+            display: flex;
+            flex-direction: column;
+            gap: 44px;
+            padding-bottom: 46px;
+
+            &Content {
+                display: flex;
+                flex-direction: column;
+                gap: 44px;
+                padding: 0 24px;
+                flex-grow: 1;
+            }
+
+            .headerNav {
+                flex-direction: column;
+                gap: 33px;
+
+                &Item {
+                    padding: 0;
+                    font-size: 22px;
+                    border: 0;
+
+                    &:hover {
+                        border: 0;
+                        background: none;
+                        padding: 0;
+                    }
+                }
+            }
+
+            &Buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+            }
+        }
+    }
+}
