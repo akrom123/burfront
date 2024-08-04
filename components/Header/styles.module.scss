@@ -107,6 +107,7 @@
 
         &Logo {
             width: 115px;
+            max-width: 100%;
         }
 
         &Burger {
@@ -122,7 +123,7 @@
         &Balance {
             height: 42px;
             font-size: 12px;
-            padding: 0 20px 0 25px;
+            padding: 0 16px 0 22px;
 
             &Icon {
                 width: 50px;
