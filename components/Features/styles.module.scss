@@ -122,7 +122,7 @@
         &Live {
             &:after {
                 background-size: 100px;
-                background-position: 53px 60px;
+                background-position: right 60px;
             }
         }
 
@@ -133,6 +133,7 @@
 
         &Content {
             gap: 6px;
+            margin-right: -10px;
         }
 
         &Title {
