@@ -65,8 +65,13 @@
             border: 0;
             flex-direction: row;
             gap: 10px;
+            margin-left:-24px;
             margin-right: -24px;
+            padding-left: 24px;
             overflow: overlay;
+::-webkit-scrollbar {
+      display: none; /* Hide scrollbar */
+   }
         }
         &Category {
             padding: 16px 24px;
