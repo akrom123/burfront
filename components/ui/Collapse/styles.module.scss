@@ -1,0 +1,48 @@
+.collapse {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: #242527;
+    font-size: 15px;
+
+    &Open {
+        .collapseHeader {
+            background-color: #313234;
+        }
+    }
+
+    &Header {
+        border-radius: 8px;
+        border: 1px solid var(--color-border);
+        margin: -1px;
+        padding: 18px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    &Title {
+        flex: 1;
+    }
+
+    &Arrow {
+        color: var(--color-gold);
+    }
+
+    &Content {
+        padding: 28px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .collapse {
+        &Content {
+            padding: 20px;
+        }
+    }
+}

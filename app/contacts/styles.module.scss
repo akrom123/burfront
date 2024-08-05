@@ -1,0 +1,75 @@
+.contacts {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    &Telegram {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            flex-basis: 0;
+    }
+    &Card {
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 15px;
+        padding: 23px 28px;
+        gap: 50px;
+        flex-basis: 0;
+        &Title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        &Link {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        &Btn {
+            font-size: 15px;
+            text-align: center;
+            border-radius: 20px;
+            background-color: #404346;
+            padding: 20px;
+        }
+        &Yellow {
+            padding: 40px;
+            background-color: var(--color-gold);
+            color: var(--color-black);
+            flex: 2;
+        }
+        &Telegram1 {
+            flex: 1;
+            flex-basis: 0;
+            background-color: #404346;
+        }
+        &Telegram2 {
+            flex: 1;
+            flex-basis: 0;
+            background-color: var(--color-bg);
+        }
+        &Email {
+            flex: 1;
+            flex-basis: 0;
+            background-color: var(--color-bg);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contacts {
+        grid-template-columns: 1fr;
+        &Telegram {
+            order: -1;
+        }
+        &Card {
+            padding: 25px;
+            gap: 40px;
+            &Yellow {
+                padding: 28px;
+                order: 1
+            }
+        }
+    }
+}

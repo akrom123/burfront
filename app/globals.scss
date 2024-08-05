@@ -31,6 +31,10 @@ body {
   font-family: 'SFProText', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.22;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
 }
 
 a {
@@ -40,14 +44,23 @@ a {
 
 .container {
   max-width: var(--container-width);
-  margin: 0 auto;
+  width: 100%;
+  margin: 50px auto 50px;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 50px;
+  flex-grow: 1;
 }
 
 @media (max-width: 767px) {
   .container {
     gap: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    &-main {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }

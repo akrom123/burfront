@@ -4,7 +4,7 @@ import React, { FC } from 'react'
 export const iconsCache: any = {};
 
 interface IProps {
-  rotate?: 90 | 180 | 270;
+  rotate?: 0 | 90 | 180 | 270;
   name: string;
   size?: keyof typeof iconSize | number;
   [key: string]: any; // Additional props for the img element

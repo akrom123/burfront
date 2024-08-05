@@ -1,0 +1,13 @@
+.promotions {
+    display: flex;
+    gap: 34px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+    .promotions {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+}
