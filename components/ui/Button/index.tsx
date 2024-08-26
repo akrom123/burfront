@@ -12,7 +12,8 @@ const variants = {
     primary: styles.buttonPrimary,
     secondary: styles.buttonSecondary,
     tertiary: styles.buttonTertiary,
-    transparent: styles.buttonTransparent
+    transparent: styles.buttonTransparent,
+    outline: styles.buttonOutline
 }
 
 

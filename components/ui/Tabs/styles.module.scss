@@ -1,0 +1,23 @@
+.tabs {
+    display: flex;
+    overflow: auto;
+    background-color: #323437;
+    padding: 2px 9px;
+    border-radius: 8px;
+    overflow-x: auto;
+    max-width: 100%;
+    &Item {
+        padding: 9px 14px;
+        border-radius: 8px;
+        font-size: 12px;
+        color: white;
+        border: 1px solid var(--color-border);
+        transition: .3s ease all;
+        cursor: pointer;
+        white-space: nowrap;
+        &Active {
+            background-color: var(--color-gold);
+            color: var(--color-black2);
+        }
+    }
+}

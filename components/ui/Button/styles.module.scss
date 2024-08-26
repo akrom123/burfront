@@ -37,6 +37,16 @@
         padding: 0;
         width: 59px;
     }
+
+    &Outline {
+        height: 49px;
+        font-size: 14px;
+        border-radius: 10px;
+        border: 1px solid #323437;
+        background: none;
+        color: #919293;
+        text-transform: none;
+    }
 }
 
 @media (max-width: 767px) {

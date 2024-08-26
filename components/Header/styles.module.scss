@@ -2,6 +2,7 @@
     display: flex;
     height: 59px;
     max-width: var(--container-width);
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     gap: 20px;
@@ -95,6 +96,7 @@
 
 @media (max-width: 767px) {
     .header {
+        width: auto;
         margin: 12px 12px 0;
         background-color: #242527;
         border: 1px solid var(--color-border);

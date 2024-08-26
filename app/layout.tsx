@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import { Header } from "@/components/Header";
 import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
+import CustomProvider from "rsuite/esm/CustomProvider";
 
 const sfProTextFont = localFont({
   src: [
@@ -68,9 +69,11 @@ export default function RootLayout({
   return (
     <html>
       <body className={sfProTextFont.className}>
-        <Header />
-        {children}
-        <Footer/>
+        <CustomProvider theme="dark">
+          <Header />
+          {children}
+          <Footer />
+        </CustomProvider>
       </body>
     </html>
   );

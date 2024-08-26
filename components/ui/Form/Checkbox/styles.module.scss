@@ -1,0 +1,38 @@
+.checkbox {
+    &Label {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+
+        &:active {
+            .checkboxInput {
+                &:not(:checked)+.checkboxIcon {
+                    color: var(--color-primary);
+                }
+            }
+        }
+
+        &Text {
+            font-size: 14px;
+        }
+    }
+
+    &Icon {
+        transition: .3s ease all;
+        color: #E0E5F2;
+    }
+
+    &Input {
+        display: none;
+
+        &:checked+.checkboxIcon {
+            color: var(--color-primary);
+        }
+    }
+
+    &Input {
+        display: none;
+    }
+}

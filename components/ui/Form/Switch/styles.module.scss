@@ -1,0 +1,51 @@
+.switch {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    user-select: none;
+
+    &Control {
+        cursor: pointer;
+        width: 60px;
+        height: 33px;
+        border-radius: 17px;
+        border: 1px solid #3E4449;
+        padding: 0 7px;
+        align-items: center;
+        display: flex;
+
+        .switchIcon {
+            width: 23px;
+            height: 23px;
+            border-radius: 12px;
+            background-color: #3E4449;
+
+        }
+    }
+
+    &Text {
+        font-size: 14px;
+    }
+
+    &Icon {
+        transition: .3s ease all;
+        color: #E0E5F2;
+    }
+
+    &Input {
+        display: none;
+
+        &:checked+.switchControl {
+            border-color: var(--color-gold);
+            justify-content: flex-end;
+
+            .switchIcon {
+                background-color: var(--color-gold);
+            }
+        }
+    }
+
+    &Input {
+        display: none;
+    }
+}
