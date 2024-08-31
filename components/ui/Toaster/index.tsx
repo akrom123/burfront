@@ -8,6 +8,7 @@ import { useIsMounted, useEventCallback } from 'rsuite/esm/internals/hooks';
 import useDelayedClosure from 'rsuite/esm//toaster/hooks/useDelayedClosure';
 import { mergeRefs } from 'rsuite/esm/internals/utils';
 import { Icon } from '../Icon';
+import clsx from 'clsx';
 
 export {
     useToaster
@@ -31,7 +32,7 @@ const types = {
 export const Toast = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
     const { type = 'default', placement, duration = 2000, message, className, onClose = () => { }, ...rest } = props;
 
-    const icon = type == 'success' ? 'tick-circle' : type === 'error' ? 'danger' : 'tick-circle';
+    // const icon = type == 'success' ? 'tick-circle' : type === 'error' ? 'danger' : 'tick-circle';
 
 
     const [display, setDisplay] = useState<TypeAttributes.DisplayState>('show');
@@ -57,7 +58,7 @@ export const Toast = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
         return null;
     }
 
-    const classes = `${className} ${styles.toast} ${types[type]} ${display === 'hiding' ? styles.toastHiding : ''}`;
+    const classes = clsx(className, styles.toast, types[type], display === 'hiding' && styles.toastHiding);
 
     return (
         <div
@@ -65,9 +66,9 @@ export const Toast = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
             {...rest}
             className={classes}
         >
-            <Icon name={icon} className={styles.toastIcon} />
+            {/* <Icon name={icon} className={styles.toastIcon} /> */}
             <div className={styles.toastMessage}>{message}</div>
-            <Icon name="close" onClick={handleClose} className={styles.toastClose} />
+            <Icon name="close-circle" size={20} onClick={handleClose} className={styles.toastClose} />
         </div>
     );
 });
