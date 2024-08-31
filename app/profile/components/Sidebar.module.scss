@@ -34,6 +34,7 @@
             background-color: #323437;
             border: 1px solid #242527;
             align-items: center;
+
             &Active {
                 color: var(--color-gold);
             }
@@ -76,16 +77,31 @@
         background: none;
         border: none;
         padding: 0;
+
         &Nav {
             flex-direction: row;
             overflow: auto;
+            margin-left: -24px;
+            margin-right: -24px;
+            padding-left: 24px;
+            overflow: auto;
+            clip-path: inset(0 0 10px 0);
+            border-radius: 0;
+
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
             gap: 8px;
+
             &Item {
                 white-space: nowrap;
                 padding: 6px 8px;
                 height: auto;
-                &Arrow, &Profile {
-                    display: none;
+                margin-bottom: 10px;
+                &Arrow,
+                &Profile {
+                    display: none !important;
                 }
             }
         }

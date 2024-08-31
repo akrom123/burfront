@@ -98,7 +98,7 @@
                 padding: 10px;
                 justify-content: center;
                 svg {
-                    display: none;
+                    display: none !important;
                 }
             }
             &Right {

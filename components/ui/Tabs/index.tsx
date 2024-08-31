@@ -17,16 +17,18 @@ interface IProps {
 }
 
 export const Tabs: FC<IProps> = ({ items, value, onChange }) => {
-    return <div className={styles.tabs}>
-        {
-            items.map(item =>
-                <div
-                    onClick={() => onChange?.(item.value)}
-                    key={item.value}
-                    className={clsx(styles.tabsItem, item.value === value && styles.tabsItemActive)}
-                >{item.label}</div>
-            )
+    return <div className={styles.tabsWrapper}>
+        <div className={styles.tabs}>
+            {
+                items.map(item =>
+                    <div
+                        onClick={() => onChange?.(item.value)}
+                        key={item.value}
+                        className={clsx(styles.tabsItem, item.value === value && styles.tabsItemActive)}
+                    >{item.label}</div>
+                )
 
-        }
+            }
+        </div>
     </div>
 }

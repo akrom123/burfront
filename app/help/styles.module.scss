@@ -71,16 +71,16 @@
             overflow: auto;
             clip-path: inset(0 0 10px 0);                   
             border-radius: 0;
-::-webkit-scrollbar {
-      display: none; /* Hide scrollbar */
-   }
+            ::-webkit-scrollbar {
+                    display: none;
+            }
         }
         &Category {
             margin-bottom: 10px;
             padding: 16px 24px;
             white-space: nowrap;
             &Arrow {
-                display: none;
+                display: none !important;
             }
             &Active, &:hover {
                 background-color: var(--color-gold);

@@ -1,11 +1,21 @@
+.tabsWrapper {
+    overflow-x: auto;
+    max-width: 100%;
+    clip-path: inset(0 0 10px 0);
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 .tabs {
     display: flex;
     overflow: auto;
     background-color: #323437;
     padding: 2px 9px;
     border-radius: 8px;
-    overflow-x: auto;
-    max-width: 100%;
+    margin-bottom: 10px;
+
     &Item {
         padding: 9px 14px;
         border-radius: 8px;
@@ -15,6 +25,7 @@
         transition: .3s ease all;
         cursor: pointer;
         white-space: nowrap;
+
         &Active {
             background-color: var(--color-gold);
             color: var(--color-black2);

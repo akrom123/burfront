@@ -44,13 +44,13 @@ export const Sidebar = () => {
                     <div className={styles.sidebarNavItemText}>История ставок</div>
                     <Icon name="arrow-down" className={styles.sidebarNavItemArrow} rotate={270} size={12} />
                 </ActiveLink>
-                <ActiveLink href="/profile/responsible" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
+                {/* <ActiveLink href="/profile/responsible" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
                     <div className={styles.sidebarNavItemIcon}>
                         <Icon name="lock" size={16} />
                     </div>
                     <div className={styles.sidebarNavItemText}>Ответственная игра</div>
                     <Icon name="arrow-down" className={styles.sidebarNavItemArrow} rotate={270} size={12} />
-                </ActiveLink>
+                </ActiveLink> */}
                 <ActiveLink href="/profile/vip" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
                     <div className={styles.sidebarNavItemIcon}>
                         <Icon name="diamond" size={20} />
@@ -58,13 +58,13 @@ export const Sidebar = () => {
                     <div className={styles.sidebarNavItemText}>VIP</div>
                     <Icon name="arrow-down" className={styles.sidebarNavItemArrow} rotate={270} size={12} />
                 </ActiveLink>
-                <ActiveLink href="/profile/requests" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
+                {/* <ActiveLink href="/profile/requests" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
                     <div className={styles.sidebarNavItemIcon}>
                         <Icon name="chat" size={18} />
                     </div>
                     <div className={styles.sidebarNavItemText}>Запросы</div>
                     <Icon name="arrow-down" className={styles.sidebarNavItemArrow} rotate={270} size={12} />
-                </ActiveLink>
+                </ActiveLink> */}
             </div>
 
             {!isXS && <Button variant="outline">Выйти</Button>}

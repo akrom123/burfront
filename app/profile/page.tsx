@@ -120,6 +120,7 @@ const Password = () => {
 
 const NotificationsCard = () => {
     const { isXS } = useMediaQuery()
+    const [notifications, setNotifications] = useState(false)
 
     return <Card title="Уведомления" compact bordered>
         <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems="center">
@@ -127,7 +128,12 @@ const NotificationsCard = () => {
                 <Input label='Email' disabled action="Сменить" value={'test@example.com'} />
             </Stack.Item>
             <div style={{ paddingTop: !isXS ? 20 : 0 }}>
-                <Switch label='Получать уведомления о новостях и рекламных акциях' />
+                <Switch
+                    checked={notifications}
+                    onChange={() => setNotifications(!notifications)}
+                    label='Получать уведомления о новостях и рекламных акциях'
+
+                />
             </div>
         </Stack>
     </Card>

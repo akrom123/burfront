@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import localFont from 'next/font/local'
 import { Header } from "@/components/Header";
-import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
 import CustomProvider from "rsuite/esm/CustomProvider";
+import type { Viewport } from 'next'
+
 
 const sfProTextFont = localFont({
   src: [
@@ -78,3 +79,15 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+
+export const viewport: Viewport = {
+  themeColor: [
+    { color: 'black' },
+  ],
+  width: 'device-width',
+  initialScale: 1
+}
+
+
