@@ -3,11 +3,11 @@ import useToaster from 'rsuite/useToaster';
 import 'rsuite/useToaster/styles/index.css';
 import 'rsuite/toaster/styles/index.css';
 import styles from './styles.module.scss';
-import { Icon } from '../../../../../owner_app_next/app/_components/Icon';
 import { TypeAttributes } from 'rsuite/esm/internals/types';
 import { useIsMounted, useEventCallback } from 'rsuite/esm/internals/hooks';
 import useDelayedClosure from 'rsuite/esm//toaster/hooks/useDelayedClosure';
 import { mergeRefs } from 'rsuite/esm/internals/utils';
+import { Icon } from '../Icon';
 
 export {
     useToaster
