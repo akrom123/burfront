@@ -15,27 +15,27 @@ export const PaymentMethods: FC<IProps> = ({ ...props }) => {
     const methods = [
         {
             title: 'Эфириум',
-            icon: '/images/ethereum.png',
+            icon: '/images/ethereum.svg',
         },
         {
             title: 'Биткойн',
-            icon: '/images/bitcoin.png',
+            icon: '/images/bitcoin.svg',
         },
         {
             title: 'Монero',
-            icon: '/images/monero.png',
+            icon: '/images/monero.svg',
         },
         {
             title: 'Эфириум',
-            icon: '/images/ethereum.png',
+            icon: '/images/tether.svg',
         },
         {
             title: 'Биткойн',
-            icon: '/images/bitcoin.png',
+            icon: '/images/uniswap.svg',
         },
         {
             title: 'Монero',
-            icon: '/images/monero.png',
+            icon: '/images/ .svg',
         },
     ]
     return <div className={styles.wrapper}>
