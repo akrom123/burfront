@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    align-items: stretch;
+}
+
+.title {
+
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.item {
+    font-size: 15px;
+    &Title {
+        color: var(--color-text);
+    }
+    &Description {
+        font-weight: bold;
+        color: var(--color-gold);
+    }
+}

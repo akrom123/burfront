@@ -1,5 +1,6 @@
 import { FC, HTMLProps } from "react"
 import styles from './styles.module.scss'
+import clsx from "clsx"
 
 const levels = {
     1: styles.headingLevel1,
@@ -9,9 +10,10 @@ const levels = {
 
 interface IProps extends HTMLProps<HTMLDivElement> {
     level: keyof typeof levels
+    center?: boolean
     children: React.ReactNode
 }
 
-export const Heading: FC<IProps> = ({children, level}) => {
-    return <div className={`${styles.heading} ${levels[level]}`}>{children}</div>
+export const Heading: FC<IProps> = ({children, level, center =  false}) => {
+    return <div className={clsx(styles.heading, levels[level], center && styles.headingCenter)}>{children}</div>
 }

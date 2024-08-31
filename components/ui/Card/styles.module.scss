@@ -5,13 +5,14 @@
     flex-direction: column;
     gap: 24px;
     display: flex;
+    &Bordered {
+        border: 1px solid #3E4449;
+    }
     &Compact {
         padding: 14px 22px;
         gap: 30px;
         border-radius: 8px;
-        .cardHeadingText {
-            
-        }
+        
     }
     &Heading {
         display: flex;

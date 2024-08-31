@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: block;
+}
+
+.methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 9px;
+}
+
+.method {
+    background-color: #242527;
+    height: 57px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    &:hover {
+        border-color: var(--color-border);
+    }
+
+    &Active,
+    &Active:hover {
+        border-color: var(--color-gold);
+    }
+}

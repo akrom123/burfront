@@ -7,15 +7,17 @@ interface IProps {
     actions?: React.ReactNode;
     children?: React.ReactNode;
     compact?: boolean;
+    bordered?: boolean;
 }
 
-export const Card: FC<IProps> = ({ title, actions, children, compact = false }) => {
+export const Card: FC<IProps> = ({ title, actions, children, compact = false, bordered = false }) => {
     return <div
         className={clsx(
             styles.card,
             !title && styles.cardWithoutHeading,
             !children && styles.cardWithoutContent,
             compact && styles.cardCompact,
+            bordered && styles.cardBordered,
         )}
     >
         {

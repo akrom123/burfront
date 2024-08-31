@@ -37,7 +37,7 @@ export const Sidebar = () => {
                     <div className={styles.sidebarNavItemText}>Счёт и платежи</div>
                     <Icon name="arrow-down" className={styles.sidebarNavItemArrow} rotate={270} size={12} />
                 </ActiveLink>
-                <ActiveLink href="/profile/history" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
+                <ActiveLink href="/profile/bets" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
                     <div className={styles.sidebarNavItemIcon}>
                         <Icon name="clock" size={24} />
                     </div>

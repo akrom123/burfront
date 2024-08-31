@@ -9,4 +9,15 @@
     &Level3 {
         
     }
+    &Center {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        &Level1 {
+            font-size: 32px;
+        }
+    }
 }
