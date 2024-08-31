@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import styles from './styles.module.scss'
-import { Icon } from '../Icon';
+import clsx from 'clsx';
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: keyof typeof variants;
@@ -19,7 +19,7 @@ const variants = {
 
 export const Button: FC<IProps> = ({ variant = 'primary', icon, children, className = '', ...props }) => {
     return (
-        <button className={`${styles.button} ${variants[variant]} ${icon && !children ? styles.buttonSquare : ''} ${className}`} {...props}>
+        <button className={clsx(styles.button, variants[variant], icon && !children && styles.buttonSquare, className)} {...props}>
             {children}
             {icon}
         </button>

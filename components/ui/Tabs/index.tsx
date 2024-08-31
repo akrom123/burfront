@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import styles from './styles.module.scss';
+import clsx from "clsx";
 
 interface ITab {
     label: string
@@ -22,7 +23,7 @@ export const Tabs: FC<IProps> = ({ items, value, onChange }) => {
                 <div
                     onClick={() => onChange?.(item.value)}
                     key={item.value}
-                    className={`${styles.tabsItem} ${item.value === value ? styles.tabsItemActive : ''}`}
+                    className={clsx(styles.tabsItem, item.value === value && styles.tabsItemActive)}
                 >{item.label}</div>
             )
 

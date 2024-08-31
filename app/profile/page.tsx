@@ -30,6 +30,7 @@ export default function Page() {
         <>
             <Card
                 compact
+                bordered
                 title={!isXS && "Мой профиль"}
                 actions={<Tabs
                     items={tabs}
@@ -96,7 +97,7 @@ const Password = () => {
 
     return <VStack alignItems='stretch' spacing={isXS ? 18 : 30}>
         <Stack.Item grow={1} basis={0}>
-            <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems='stretch'> 
+            <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems='stretch'>
                 <Stack.Item grow={1} basis={0}>
                     <Input label='Текущий пароль' type='password' />
                 </Stack.Item>
@@ -120,7 +121,7 @@ const Password = () => {
 const NotificationsCard = () => {
     const { isXS } = useMediaQuery()
 
-    return <Card title="Уведомления" compact>
+    return <Card title="Уведомления" compact bordered>
         <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems="center">
             <Stack.Item grow={1} basis={0}>
                 <Input label='Email' disabled action="Сменить" value={'test@example.com'} />

@@ -25,7 +25,7 @@ export const Card: FC<IProps> = ({ title, variant = 'default', action, handleAct
         <div className={styles.cardHeading}>
             {title}
         </div>
-        <div className={`${styles.cardContent}`}>
+        <div className={styles.cardContent}>
             {children}
         </div>
         {

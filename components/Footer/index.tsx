@@ -13,7 +13,9 @@ export const Footer: FC<IProps> = ({ copyright = true }) => {
         <div className={styles.footerTop}>
             {
                 copyright && <div className={styles.footerTopLeft}>
-                    <Logo />
+                    <Link href="/">
+                        <Logo />
+                    </Link>
                     <div className={styles.footerCopyright}>© 2024</div>
                     <div className={styles.footerAge}>18+</div>
                 </div>

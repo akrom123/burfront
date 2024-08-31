@@ -24,6 +24,15 @@
         color: var(--color-text);
     }
 
+    &Tertiary {
+        background-color: #434549;
+        border: 1px solid var(--color-border);
+        height: 59px;
+        padding: 0 50px;
+        text-transform: uppercase;
+        color: var(--color-text);
+    }
+    
     &Transparent {
         padding: 0 51px;
         height: 59px;

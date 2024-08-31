@@ -30,9 +30,13 @@
             border: 1px solid transparent;
             border-radius: var(--border-radius);
 
-            &:hover {
+            &Active {
                 background: #323336;
                 border-color: #3F444B;
+            }
+
+            &:hover:not(.headerNacItemActive) {
+                color: var(--color-gold);
             }
         }
     }
@@ -46,6 +50,7 @@
         align-items: center;
         font-size: 17px;
         color: var(--color-gold);
+        margin-left: 6px;
 
         &:before {
             position: absolute;
@@ -84,11 +89,96 @@
             line-height: 1;
             display: flex;
             cursor: pointer;
+
             &:before {
                 content: '+';
                 font-size: 20px;
                 height: 23px;
                 font-weight: 100;
+            }
+        }
+    }
+
+    &Profile {
+        position: relative;
+
+        &Arrow {
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        &Dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: 270px;
+            flex-shrink: 0;
+            padding: 7px;
+            background-color: #242527;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            padding: 12px 7px;
+            align-items: stretch;
+            flex-direction: column;
+            display: flex;
+            gap: 36px;
+        }
+
+        &ProfileIcon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#FBC04E, 0.1);
+            border-radius: 6px;
+        }
+
+        &Nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &Item {
+                cursor: pointer;
+                padding: 7px 30px 7px 8px;
+                display: flex;
+                border-radius: 10px;
+                background-color: #323437;
+                border: 1px solid #242527;
+                align-items: center;
+
+                &Active {
+                    color: var(--color-gold);
+                }
+
+                &Profile {
+                    padding-right: 15px;
+                }
+
+                &Icon {
+                    background-color: #242527;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 11px;
+                }
+
+                &Text {
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                    flex: 1;
+                    font-size: 14px;
+                }
+
+                &:hover,
+                &Active {
+                    color: var(--color-gold);
+                }
             }
         }
     }
@@ -111,7 +201,10 @@
 
         &Logo {
             width: 115px;
-            max-width: 100%;
+
+            svg {
+                max-width: 100%;
+            }
         }
 
         &Burger {
@@ -182,6 +275,10 @@
                         border: 0;
                         background: none;
                         padding: 0;
+                    }
+
+                    &Active {
+                        color: var(--color-gold);
                     }
                 }
             }

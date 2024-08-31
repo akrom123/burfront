@@ -19,7 +19,7 @@ export const Sidebar = () => {
                         <div className={styles.sidebarProfileIcon}>
                             <Icon name="user-duotone" size={23} />
                         </div>
-                        <span>Мой профиль</span>
+                        <span>Иван Иванов</span>
                     </div>
                     <Icon name="notification" className={styles.sidebarNavItemArrow} size={24} />
                 </div>

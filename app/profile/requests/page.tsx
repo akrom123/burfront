@@ -25,12 +25,11 @@ export default function Page() {
     return (
         <>
             <Card
-                title="Ответственная игра"
-                actions={<Tabs
-                    items={tabs}
-                    value={tab}
-                    onChange={(value) => setTab(value as number)}
-                />}
+                title="Запросы"
+                actions={<>
+                <Button>Новый тикет</Button>
+                <Button variant='tertiary'>Help center</Button>
+                </>}
             >
             </Card>
         </>

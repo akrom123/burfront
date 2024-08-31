@@ -1,7 +1,6 @@
 'use client'
 
 import { FC, useEffect, useState } from "react"
-import Link from 'next/link'
 import styles from './styles.module.scss'
 import { LangSwitcher } from "./LangSwitcher"
 import { Logo } from "../ui/Logo"
@@ -9,11 +8,16 @@ import { Button } from "../ui/Button"
 import { Icon } from "../ui/Icon"
 import { useMediaQuery } from "@/hooks"
 import { Footer } from "../Footer"
+import { usePathname } from "next/navigation"
+import { ActiveLink } from "../ui/ActiveLink"
+import Link from "next/link"
+import { Profile } from "./Profile"
 
 
 export const Header: FC = () => {
     const { isXS } = useMediaQuery()
     const [loggedIn, setLoggedIn] = useState(false)
+    const pathname = usePathname()
     const [isInitialized, setIsInitialized] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
 
@@ -21,14 +25,18 @@ export const Header: FC = () => {
         setIsInitialized(true)
     }, [])
 
+    useEffect(() => {
+        setIsOpen(false)
+    }, [pathname])
+
     if (!isInitialized) return null
 
     const nav = <nav className={styles.headerNav}>
-        <Link href="/" className={styles.headerNavItem}>Game</Link>
-        <Link href="/" className={styles.headerNavItem}>Sports</Link>
-        <Link href="/" className={styles.headerNavItem}>Contacts</Link>
-        <Link href="/" className={styles.headerNavItem}>Help</Link>
-        <Link href="/" className={styles.headerNavItem}>Promocode</Link>
+        <ActiveLink href="/game" className={styles.headerNavItem} activeClassName={styles.headerNavItemActive}>Game</ActiveLink>
+        <ActiveLink href="/sport" className={styles.headerNavItem} activeClassName={styles.headerNavItemActive}>Sports</ActiveLink>
+        <ActiveLink href="/contacts" className={styles.headerNavItem} activeClassName={styles.headerNavItemActive}>Contacts</ActiveLink>
+        <ActiveLink href="/help" className={styles.headerNavItem} activeClassName={styles.headerNavItemActive}>Help</ActiveLink>
+        <ActiveLink href="/promo" className={styles.headerNavItem} activeClassName={styles.headerNavItemActive}>Promocode</ActiveLink>
     </nav>
 
     const header = <header className={styles.header}>
@@ -39,7 +47,9 @@ export const Header: FC = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className={styles.headerBurger}
             />}
-            <Logo className={styles.headerLogo} />
+            <Link href="/" className={styles.headerLogo}>
+                <Logo />
+            </Link>
             {
                 !isXS && nav
             }
@@ -52,7 +62,7 @@ export const Header: FC = () => {
                 {
                     loggedIn ? <>
                         <Balance />
-                        <Button icon={<Icon name="user-duotone" size={isXS ? 20 : 30} />} variant="secondary" onClick={() => setLoggedIn(false)} />
+                        <Profile/>
                     </> : <>
                         {!isXS && <Button>JOIN NOW</Button>}
                         <Button icon={<Icon name="login" size={21} />} variant="secondary" onClick={() => setLoggedIn(true)} />

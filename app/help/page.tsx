@@ -2,6 +2,7 @@ import { Heading } from "@/components/Heading";
 import styles from './styles.module.scss'
 import { Collapse } from "@/components/ui/Collapse";
 import { Icon } from "@/components/ui/Icon";
+import clsx from "clsx";
 
 
 export default function Page() {
@@ -20,7 +21,7 @@ export default function Page() {
                 <div className={styles.helpCategoryText}>Общие вопросы</div>
                 <Icon name="arrow-down" className={styles.helpCategoryArrow} rotate={270} size={12} />
               </div>
-              <div className={`${styles.helpCategory} ${styles.helpCategoryActive}`}>
+              <div className={clsx(styles.helpCategory, styles.helpCategoryActive)}>
                 <div className={styles.helpCategoryText}>Общие вопросы</div>
                 <Icon name="arrow-down" className={styles.helpCategoryArrow} rotate={270} size={12} />
               </div>

@@ -28,7 +28,7 @@ export const Card: FC<IProps> = ({ title, actions, children, compact = false, bo
             </div>
         }
         {
-            children && <div className={`${styles.cardContent}`}>
+            children && <div className={styles.cardContent}>
                 {children}
             </div>
         }
