@@ -11,6 +11,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/finance/Card";
 import { useCountDown } from "@reactuses/core";
+import { Copy } from "@/components/ui/Copy";
 
 
 export default function Page() {
@@ -59,9 +60,9 @@ export default function Page() {
                 height={50}
               />
             </div>
-            <Input readOnly action={<Icon name="copy" size={15} />} value={'8746.7841'} actionType="copy" />
+            <Input readOnly action={<Copy text="8746.7841" />} value={'8746.7841'} actionType="copy" />
           </div>
-          <Input readOnly action={<Icon name="copy" size={15} />} value={'TULPUkZtdC2BjnJ6syx6LtjdUdYTHQ7bKj'} actionType="copy" label="Счет" />
+          <Input readOnly action={<Copy text="TULPUkZtdC2BjnJ6syx6LtjdUdYTHQ7bKj"/>} value={'TULPUkZtdC2BjnJ6syx6LtjdUdYTHQ7bKj'} actionType="copy" label="Счет" />
           <div className={styles.depositRequisitesQR}>
             <Image
               src={'/images/qr.png'}

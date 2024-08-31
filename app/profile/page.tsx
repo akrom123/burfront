@@ -51,6 +51,9 @@ export default function Page() {
             {
                 tab === 0 && <NotificationsCard />
             }
+            {
+                tab === 0 && <PromocodeCard />
+            }
         </>
     );
 }
@@ -101,10 +104,12 @@ const Password = () => {
                 <Stack.Item grow={1} basis={0}>
                     <Input label='Текущий пароль' type='password' />
                 </Stack.Item>
-                <Stack.Item grow={1} basis={0}></Stack.Item>
+                {
+                    !isXS && <Stack.Item grow={1} basis={0} />
+                }
             </Stack>
         </Stack.Item>
-        <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30}>
+        <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems={isXS ? 'stretch' : 'center'}>
             <Stack.Item grow={1} basis={0}>
                 <Input label='Новый пароль' type='password' />
             </Stack.Item>
@@ -135,6 +140,16 @@ const NotificationsCard = () => {
 
                 />
             </div>
+        </Stack>
+    </Card>
+}
+
+const PromocodeCard = () => {
+    const { isXS } = useMediaQuery()
+
+    return <Card title="Промокод" compact bordered>
+        <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems={isXS ? 'stretch' : 'center'}>
+            <Input label='Введите промокод' action="Применить" />
         </Stack>
     </Card>
 }
