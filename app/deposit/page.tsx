@@ -5,11 +5,12 @@ import styles from './styles.module.scss'
 import { Input } from "@/components/ui/Form";
 import { InfoCard } from "@/components/finance/InfoCard";
 import { PaymentMethods } from "@/components/finance/PaymentMethods";
-import { useState } from "react";
+import { FC, useState } from "react";
 import Image from 'next/image';
 import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/finance/Card";
+import { useCountDown } from "@reactuses/core";
 
 
 export default function Page() {
@@ -84,10 +85,23 @@ export default function Page() {
       }
       {
         step === 2 &&
+        <Card action="Вернуться назад" title="Ожидает оплаты">
+          <Timer onFinish={() => setStep(3)}/>
+        </Card>
+      }
+      {
+        step === 3 &&
         <Card variant="success" action="К играм" title="Счет пополнен">
           + $257
         </Card>
       }
     </div>
   );
+}
+
+
+const Timer: FC<{onFinish?: () => void}> = ({onFinish}) => {
+  const [hours, minute, second] = useCountDown(5, undefined, onFinish);
+  return <div>{`${minute}:${second}`}</div>
+
 }
