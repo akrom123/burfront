@@ -21,8 +21,8 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement> {
     actionType?: keyof typeof actionStyles
 }
 
-export const Input: FC<IProps> = ({ label, name, action, actionType = 'button', ...props }) => {
-    return <div className={styles.wrapper}>
+export const Input: FC<IProps> = ({ label, name, action, actionType = 'button', className, ...props }) => {
+    return <div className={clsx(styles.wrapper, className)}>
         {
             label && <label className={styles.label}>
                 {label}
