@@ -1,0 +1,11 @@
+.privilegies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .privilegies {
+        grid-template-columns: 1fr 1fr;
+    }
+}

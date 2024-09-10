@@ -26,10 +26,19 @@ export const iconSize = {
   lg: 40,
 }
 
-export const Icon: FC<IProps> = ({ name = 'add', size = 24, rotate, ...props }) => {
+export const Icon: FC<IProps> = ({ name = 'add', size = 24, rotate, style, ...props }) => {
   const Component = iconsCache[name];
   size = typeof size === 'number' ? size : iconSize[size];
   return (
-    <Component width={size} height={size} style={{ display: 'block', ...(rotate ? { transform: `rotate(${rotate}deg)` } : {}) }} {...props} />
+    <Component
+      width={size}
+      height={size}
+      style={{
+        display: 'block',
+        ...(rotate ? { transform: `rotate(${rotate}deg)` } : {}),
+        ...style
+      }}
+      {...props}
+    />
   )
 }

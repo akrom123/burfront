@@ -1,0 +1,105 @@
+.partnersBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.statsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.campaigns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    &Indicators {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-bottom: 20px;
+    }
+
+    &Indicator {
+        display: flex;
+        flex-direction: column;
+
+        &Text {
+            font-size: 12px;
+        }
+
+        &Value {
+            font-weight: bold;
+            font-size: 22px;
+        }
+    }
+
+    &CreateButton {
+        padding: 14px;
+        text-align: center;
+        border-color: var(--color-border3);
+        background-color: #2F3133;
+        border-radius: 12px;
+        cursor: pointer;
+
+    }
+}
+
+
+.statsCardsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.statsCard {
+    overflow: auto !important;
+    padding: 15px;
+    border: 1px solid var(--color-border);
+    background-color: #2C2D2F;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    gap: 16px;
+    border-radius: 8px;
+
+    &Col {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        font-size: 11px;
+
+        &Title {
+            opacity: 0.6;
+        }
+    }
+}
+
+.detailsActions {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+
+    &Button {
+        height: 50px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .campaigns {
+        &Indicators {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .detailsActions {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}

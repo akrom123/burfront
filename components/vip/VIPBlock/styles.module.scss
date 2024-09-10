@@ -1,0 +1,11 @@
+.vipBlock {
+    gap: 32px;
+    flex-direction: column;
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .vipBlock {
+        gap: 16px;
+    }
+}

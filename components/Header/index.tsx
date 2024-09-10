@@ -92,9 +92,9 @@ export const Header: FC = () => {
 }
 
 const Balance = () => {
-    return <div className={styles.headerBalance}>
+    return <Link href={'/deposit'} className={styles.headerBalance}>
         <div className={styles.headerBalanceIcon} />
         <span>$1757.44</span>
-        <div className={styles.headerBalanceButton}></div>
-    </div>
+        <div className={styles.headerBalanceButton} />
+    </Link>
 }

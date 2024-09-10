@@ -1,0 +1,42 @@
+.countdown {
+    display: flex;
+    gap: 8px;
+    &Item {
+        width: 84px;
+        height: 88px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--color-border2);
+        background-color: #2D2F32;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        &Number {
+            margin-bottom: 3px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        &Description {
+            margin-bottom: 3px;
+            opacity: 0.6;
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .countdown {
+        gap: 6px;
+        &Item {
+            border-radius: 8px;
+            width: 64px;
+            height: 66px;
+            &Number {
+                font-size: 24px;
+            }
+            &Description {
+                font-size: 10px;
+            }
+        }
+    }
+}

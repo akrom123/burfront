@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import localFont from 'next/font/local'
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import CustomProvider from "rsuite/esm/CustomProvider";
 import type { Viewport } from 'next'
 
@@ -71,9 +69,7 @@ export default function RootLayout({
     <html>
       <body className={sfProTextFont.className}>
         <CustomProvider theme="dark">
-          <Header />
           {children}
-          <Footer />
         </CustomProvider>
       </body>
     </html>

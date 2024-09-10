@@ -18,8 +18,8 @@
 
     &Live {
         padding: 20px 12px;
-        border-color: #D01A1A;
-        background-color: rgba(#D01A1A, .33);
+        border-color: var(--color-live);
+        background-color: color-mix(in srgb, var(--color-live) 33%, transparent);
         flex-grow: 0;
         min-width: 150px;
 
@@ -37,21 +37,21 @@
     }
 
     &Sport {
-        border-color: #9CEB76;
-        color: #9CEB76;
-        background-color: rgba(#9CEB76, 0.11);
+        border-color: var(--color-sport);
+        color: var(--color-sport);
+        background-color: color-mix(in srgb, var(--color-sport) 11%, transparent);
     }
 
     &Dice {
-        border-color: #6372FF;
-        color: #6372FF;
-        background-color: rgba(#6372FF, 0.11);
+        border-color: var(--color-dice);
+        color: var(--color-dice);
+        background-color: color-mix(in srgb, var(--color-dice) 11%, transparent);
     }
 
     &Crash {
-        border-color: #FBC04E;
-        color: #FBC04E;
-        background-color: rgba(#FBC04E, 0.11);
+        border-color: var(--color-gold);
+        color: var(--color-gold);
+        background-color: color-mix(in srgb, var(--color-gold) 11%, transparent);
     }
 
     &More {
@@ -94,8 +94,8 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        border: 1px solid rgba(white, 0.13);
-        background-color: rgba(white, 0.04);
+        border: 1px solid color-mix(in srgb, var(--color-text) 13%, transparent);
+        background-color: color-mix(in srgb, var(--color-text) 4%, transparent);
         font-size: 14px;
         height: 59px;
         border-radius: 8px;

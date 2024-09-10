@@ -3,6 +3,11 @@
 :root {
   --border-radius: 8px;
   --color-gold: #FBC04E;
+  --color-bronze: #FB784E;
+  --color-silver: #A8A8A8;
+  --color-blue: #5295FF;
+  --color-lightblue: #4EDCFB;
+  --color-gold: #FBC04E;
   --color-main-bg: #14161A;
   --color-bg: #212325;
   --color-text: #ffffff;
@@ -10,6 +15,11 @@
   --color-black: #000000;
   --color-black2: #141619;
   --color-border: #383838;
+  --color-border2: #3E4449;
+  --color-border3: #33373A;
+  --color-live: #D01A1A;
+  --color-sport: #9CEB76;
+  --color-dice: #6372FF;
   --container-width: 1140px;
 }
 
@@ -53,11 +63,25 @@ a {
   flex-grow: 1;
 }
 
+article {
+
+  p,
+  ul,
+  ol {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: inside;
+  }
+}
+
 @media (max-width: 767px) {
   .container {
     gap: 30px;
     padding-left: 24px;
     padding-right: 24px;
+
     &-main {
       padding-left: 0;
       padding-right: 0;

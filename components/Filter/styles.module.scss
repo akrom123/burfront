@@ -1,0 +1,60 @@
+.filtersWrapper {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    color: var(--color-text);
+    display: flex;
+    gap: 6px;
+
+    &Label {
+        opacity: 0.6;
+    }
+
+    &Dropdown {
+        position: relative;
+
+        &Value {
+            cursor: pointer;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+
+            svg {
+                opacity: 0.6;
+            }
+        }
+
+        &Options {
+            position: absolute;
+            top: calc(100% + 10px);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            background-color: var(--color-bg);
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+
+            &Item {
+                padding: 6px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .filtersWrapper {
+        gap: 8px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 12px;
+    }
+
+}

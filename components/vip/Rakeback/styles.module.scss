@@ -1,0 +1,54 @@
+.rakeback {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+
+    &Title {
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &Items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    &Item {
+        justify-content: center;
+        border-radius: 12px;
+        background-color: #2F3133;
+        padding: 14px 24px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &Button {
+        background-color: var(--color-gold);
+        font-size: 12px;
+        color: var(--color-black);
+        text-align: center;
+        height: 55px;
+        max-width: 350px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+    }
+
+    &Description {
+        font-size: 18px;
+        text-align: center;
+        opacity: 0.6;
+    }
+}

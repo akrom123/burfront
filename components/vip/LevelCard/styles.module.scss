@@ -1,0 +1,68 @@
+.levelCard {
+    background-color: #2D2F32;
+    clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 56px 18px;
+    border-radius: 10px;
+    min-width: 290px;
+
+    &Container {
+        position: relative;
+    }
+
+    &Wrapper {
+        clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
+        background-color: var(--color-border);
+        padding: 1px;
+        border-radius: 12px;
+    }
+
+    &Image {
+        z-index: 1;
+        position: absolute;
+        top: -48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &Badge {
+        margin-bottom: 8px;
+    }
+
+    &Amount {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-bottom: 12px;
+
+        &Value {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        &Label {
+            font-size: 12px;
+            color: var(--color-text);
+            opacity: 0.6;
+        }
+    }
+
+    &Features {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &Feature {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        &Label {
+            font-size: 14px;
+            color: var(--color-text);
+        }
+    }
+}

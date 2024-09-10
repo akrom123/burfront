@@ -1,0 +1,8 @@
+.levelCards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+    clip-path: inset(0 0 10px 0);
+    overflow-x: auto;
+    padding-top: 50px;
+}

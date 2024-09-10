@@ -35,7 +35,7 @@ export const PaymentMethods: FC<IProps> = ({ ...props }) => {
         },
         {
             title: 'Монero',
-            icon: '/images/ .svg',
+            icon: '/images/uniswap.svg',
         },
     ]
     return <div className={styles.wrapper}>

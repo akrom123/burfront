@@ -4,13 +4,15 @@ import { Toast, useToaster } from "../Toaster"
 
 interface IProps {
     text?: string
+    icon?: string
+    iconSize?: number
 }
 
-export const Copy: FC<IProps> = ({ text = '' }) => {
+export const Copy: FC<IProps> = ({ text = '', icon = 'copy', iconSize = 15 }) => {
     const toaster = useToaster()
     return <Icon
-        name="copy"
-        size={15}
+        name={icon}
+        size={iconSize}
         onClick={() => {
             navigator.clipboard.writeText(text)
             toaster.push(

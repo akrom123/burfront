@@ -1,0 +1,26 @@
+.copybar {
+    background-color: #1C1D20;
+    border: 1px solid var(--color-border);
+    display: flex;
+    height: 50px;
+    border-radius: 8px;
+    padding: 0 14px;
+    gap: 15px;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+
+    &Text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+
+    }
+
+    &Icon {
+        color: var(--color-gold);
+        cursor: pointer;
+    }
+
+}

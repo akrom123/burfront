@@ -26,7 +26,6 @@
         &Item {
             text-transform: uppercase;
             padding: 15px 22px;
-            color: white;
             border: 1px solid transparent;
             border-radius: var(--border-radius);
 
@@ -130,9 +129,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgba(#FBC04E, 0.1);
+            background-color: color-mix(in srgb, var(--color-gold) 10%, transparent);
             border-radius: 6px;
         }
+
 
         &Nav {
             display: flex;
@@ -150,10 +150,6 @@
 
                 &Active {
                     color: var(--color-gold);
-                }
-
-                &Profile {
-                    padding-right: 15px;
                 }
 
                 &Icon {
@@ -179,6 +175,15 @@
                 &Active {
                     color: var(--color-gold);
                 }
+            }
+        }
+
+        &Profile {
+            padding-right: 15px;
+            cursor: default;
+
+            &:hover {
+                color: inherit;
             }
         }
     }

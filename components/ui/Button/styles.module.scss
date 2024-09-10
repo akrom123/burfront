@@ -16,7 +16,7 @@
     }
 
     &Secondary {
-        background-color: #FBC04E10;
+        background-color: color-mix(in srgb, var(--color-gold) 10%, transparent);
         border: 1px solid var(--color-border);
         height: 59px;
         padding: 0 50px;
@@ -32,14 +32,23 @@
         text-transform: uppercase;
         color: var(--color-text);
     }
-    
+
+    &Gold {
+        background-color: color-mix(in srgb, var(--color-gold) 10%, transparent);
+        border: 1px solid var(--color-gold);
+        height: 59px;
+        padding: 0 50px;
+        text-transform: uppercase;
+        color: var(--color-gold);
+    }
+
     &Transparent {
         padding: 0 51px;
         height: 59px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: color-mix(in srgb, var(--color-text) 10%, transparent);
+        border: 1px solid color-mix(in srgb, var(--color-text) 40%, transparent);
         border-radius: 8px;
-        color: #ffffff;
+        color: var(--color-text);
         backdrop-filter: blur(6px);
     }
 
