@@ -7,6 +7,7 @@ import { Icon } from '@/components/ui/Icon';
 import { useMediaQuery } from '@/hooks';
 import styles from './styles.module.scss';
 import { TableCollapsible } from '@/components/ui/TableCollapsible';
+import { useState } from 'react';
 
 export default function Page() {
 
@@ -67,39 +68,61 @@ export default function Page() {
                         data={data}
                     /> : <div className={styles.cardsList}>
                         {data.map((row, index) => (
-                            <div key={index} className={styles.card}>
-                                <div className={styles.cardHeader}>
-                                    <div className={styles.cardHeaderLeft}>
-                                        <div className={styles.cardHeaderLeftTitle}>Игра</div>
-                                        <div>{row.game}</div>
-                                    </div>
-                                    <div className={styles.cardHeaderDate}>
-                                        <Icon name="clock" size={12} className={styles.cardHeaderDateIcon} />
-                                        <div>{row.registeredDate}</div>
-                                    </div>
-                                </div>
-                                <div className={styles.cardRows}>
-                                    <div className={styles.cardRow}>
-                                        <div className={styles.cardRowTitle}>Тип</div>
-                                        <div className={styles.cardRowValue}>{row.type1}</div>
-                                    </div>
-                                    <div className={styles.cardRow}>
-                                        <div className={styles.cardRowTitle}>Тип</div>
-                                        <div className={styles.cardRowValue}>{row.type2}</div>
-                                    </div>
-                                    <div className={styles.cardRow}>
-                                        <div className={styles.cardRowTitle}>Тип</div>
-                                        <div className={styles.cardRowValue}>{row.type3}</div>
-                                    </div>
-                                </div>
-                                <div className={styles.cardAction}>
-                                    Показать детали
-                                </div>
-                            </div>
+                            <Card key={index} row={row} />
                         ))}
                     </div>
                 }
             </Card>
         </>
     );
+}
+
+const Card = ({ row }: any) => {
+    const [isOpen, setIsOpen] = useState(false)
+    return <div className={styles.card}>
+        <div className={styles.cardHeader}>
+            <div className={styles.cardHeaderLeft}>
+                <div className={styles.cardHeaderLeftTitle}>Игра</div>
+                <div>{row.game}</div>
+            </div>
+            <div className={styles.cardHeaderDate}>
+                <Icon name="clock" size={12} className={styles.cardHeaderDateIcon} />
+                <div>{row.registeredDate}</div>
+            </div>
+        </div>
+        <div className={styles.cardRows}>
+            <div className={styles.cardRow}>
+                <div className={styles.cardRowTitle}>Тип</div>
+                <div className={styles.cardRowValue}>{row.type1}</div>
+            </div>
+            <div className={styles.cardRow}>
+                <div className={styles.cardRowTitle}>Тип</div>
+                <div className={styles.cardRowValue}>{row.type2}</div>
+            </div>
+            <div className={styles.cardRow}>
+                <div className={styles.cardRowTitle}>Тип</div>
+                <div className={styles.cardRowValue}>{row.type3}</div>
+            </div>
+            {
+                isOpen && <>
+
+                    <div className={styles.cardRow}>
+                        <div className={styles.cardRowTitle}>Тип</div>
+                        <div className={styles.cardRowValue}>{row.type3}</div>
+                    </div>
+                    <div className={styles.cardRow}>
+                        <div className={styles.cardRowTitle}>Тип</div>
+                        <div className={styles.cardRowValue}>{row.type3}</div>
+                    </div>
+                    <div className={styles.cardRow}>
+                        <div className={styles.cardRowTitle}>Тип</div>
+                        <div className={styles.cardRowValue}>{row.type3}</div>
+                    </div>
+                </>
+            }
+        </div>
+        <div className={styles.cardAction} onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? 'Скрыть подробности' : 'Показать детали'}
+        </div>
+    </div>
 }

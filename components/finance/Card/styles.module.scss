@@ -59,7 +59,11 @@
 
 @media (max-width: 768px) {
     .card {
-        padding: 22px 28px;
+        padding: 22px 20px;
+
+        &Heading {
+            font-size: 28px;
+        }
     }
 
 }
