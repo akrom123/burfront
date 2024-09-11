@@ -3,12 +3,13 @@
 .rs-modal-wrapper {
     display: flex;
     justify-content: center;
+    will-change: display;
 }
 
 .rs-modal {
     width: auto;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    
+    will-change: transform;
 
     &-content {
         padding: 0;
