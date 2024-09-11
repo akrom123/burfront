@@ -8,7 +8,7 @@ import { ActiveLink } from "@/components/ui/ActiveLink";
 import { useMediaQuery } from "@/hooks";
 import { useStores } from "@/contexts";
 import { useState } from "react";
-import { Notifications } from './Notifications';
+import { Notifications } from '@/components/Notifications';
 
 export const Sidebar = () => {
     const { isXS } = useMediaQuery()
@@ -76,7 +76,10 @@ export const Sidebar = () => {
             </div>
 
             {!isXS && <Button variant="outline" onClick={() => appStore.setLoggedIn(false)}>Выйти</Button>}
-            {!isXS && notificationsOpen && <Notifications onClose={() => setNotificationsOpen(false)} />}
+            {!isXS && notificationsOpen && <Notifications
+                className={styles.sidebarNotifications}
+                onClose={() => setNotificationsOpen(false)}
+            />}
         </div>
     );
 }

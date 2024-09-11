@@ -6,6 +6,7 @@ import type { Viewport } from 'next'
 import { StoreWrapper } from "@/contexts";
 import { AuthModal } from "@/components/modals/AuthModal";
 import { RegistrationModal } from "@/components/modals/RegistrationModal";
+import { Modals } from "@/components/modals";
 
 
 const sfProTextFont = localFont({
@@ -76,8 +77,7 @@ export default function RootLayout({
             {children}
           </StoreWrapper>
         </CustomProvider>
-        <AuthModal />
-        <RegistrationModal />
+        <Modals />
       </body>
     </html>
   );

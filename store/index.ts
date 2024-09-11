@@ -10,6 +10,7 @@ export class AppStore {
         auth: false,
         registration: false,
         forgot: false,
+        notifications: false,
     }
 
     notifications = Array(5).fill({

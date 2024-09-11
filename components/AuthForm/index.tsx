@@ -1,15 +1,15 @@
-import { authModelSchema, registrationModelSchema } from "@/schemas"
-import { Checkbox, Form, Input, PhoneInput } from "../ui/Form"
+import { authModelSchema } from "@/schemas"
+import { Form, Input } from "../ui/Form"
 import styles from './styles.module.scss'
 import { Button } from "../ui/Button"
 import { useStores } from "@/contexts"
 import { useMediaQuery } from "@/hooks"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 export const AuthForm = () => {
     const { isXS } = useMediaQuery()
     const { appStore } = useStores()
-    // const router = useRouter()
+    const router = useRouter()
     return <div className={styles.authForm}>
         <Form
             defaultValues={{}}
@@ -27,8 +27,10 @@ export const AuthForm = () => {
                 <div className={styles.authFormButtons}>
                     <Button
                         variant="tertiary"
+                        type="button"
                         onClick={() => {
-                            appStore.toggleModal('registration', true)
+                            appStore.toggleModal('auth', false)
+                            !isXS ? router.push('/registration') : appStore.toggleModal('registration', true)
                         }}
                     >Register</Button>
                     <Button

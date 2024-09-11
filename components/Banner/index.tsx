@@ -7,8 +7,11 @@ import Image from 'next/image'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
+import { useRouter } from 'next/navigation'
 
 export const Banner = () => {
+    const router = useRouter()
+
     return <div className={styles.banner}>
         <div className={styles.bannerSlider}>
             <Slider dots fade infinite speed={500} slidesToShow={1} slidesToScroll={1} waitForAnimate={false} arrows={false}>
@@ -18,7 +21,7 @@ export const Banner = () => {
                             <div className={styles.bannerHeading}>Заголовок баннера в две строки</div>
                             <div className={styles.bannerDescription}>Краткое описание подзаголовоком в одну строку</div>
                         </div>
-                        <Button>Подробнее</Button>
+                        <Button onClick={() => router.push('/promo')}>Подробнее</Button>
                     </div>
                     <Image src="/images/banner.png" width={570} height={400} alt='' />
                 </div><div className={styles.bannerItem}>
@@ -27,7 +30,7 @@ export const Banner = () => {
                             <div className={styles.bannerHeading}>Заголовок баннера 2 в две строки</div>
                             <div className={styles.bannerDescription}>Краткое описание 2 подзаголовоком в одну строку</div>
                         </div>
-                        <Button>Подробнее</Button>
+                        <Button onClick={() => router.push('/promo')}>Подробнее</Button>
                     </div>
                     <Image src="/images/banner.png" width={570} height={400} alt='' />
                 </div>

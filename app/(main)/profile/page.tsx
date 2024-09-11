@@ -4,11 +4,14 @@ import { AuthForm } from '@/components/AuthForm';
 import { Button } from '@/components/ui/Button';
 import { Card } from "@/components/ui/Card";
 import { Form, Input, PhoneInput, Switch } from '@/components/ui/Form';
+import { Icon } from '@/components/ui/Icon';
 import { Modal } from '@/components/ui/Modal';
 import { Stack, VStack } from '@/components/ui/Stack';
 import { Tabs } from "@/components/ui/Tabs";
 import { VIPBlock } from '@/components/vip/VIPBlock';
+import { useStores } from '@/contexts';
 import { useMediaQuery } from '@/hooks';
+import { observer } from 'mobx-react-lite';
 import { useState } from "react";
 import { z } from 'zod';
 
@@ -129,14 +132,21 @@ const Password = () => {
     </Form>
 }
 
-const NotificationsCard = () => {
+const NotificationsCard = observer(() => {
     const { isXS } = useMediaQuery()
     const [notifications, setNotifications] = useState(false)
-
-    return <Card title="Уведомления" compact bordered>
+    const { appStore } = useStores()
+    return <Card
+        title="Уведомления"
+        compact
+        bordered
+        actions={
+            isXS && <Icon name="notification" size={35} onClick={() => appStore.toggleModal('notifications', true)} />
+        }
+    >
         <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems={isXS ? 'stretch' : 'center'}>
             <Stack.Item grow={1} basis={0}>
-                <Input label='Email' disabled action="Сменить" value={'test@example.com'} />
+                <Input label='Email' variant="secondary" action="Сменить" value={'test@example.com'} />
             </Stack.Item>
             <div style={{ paddingTop: !isXS ? 20 : 0 }}>
                 <Switch
@@ -148,14 +158,14 @@ const NotificationsCard = () => {
             </div>
         </Stack>
     </Card>
-}
+})
 
 const PromocodeCard = () => {
     const { isXS } = useMediaQuery()
 
     return <Card title="Промокод" compact bordered>
         <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems={isXS ? 'stretch' : 'center'}>
-            <Input label='Введите промокод' action="Применить" />
+            <Input label='Введите промокод' variant="secondary" action="Применить" />
         </Stack>
     </Card>
 }

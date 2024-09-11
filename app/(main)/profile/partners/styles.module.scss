@@ -85,6 +85,7 @@
     grid-template-columns: 1fr 1fr;
 
     &Button {
+        cursor: pointer;
         height: 50px !important;
         padding-left: 0 !important;
         padding-right: 0 !important;

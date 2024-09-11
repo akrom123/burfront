@@ -17,12 +17,18 @@ const actionStyles = {
     placeholder: styles.actionPlaceholder,
 }
 
+const variantStyles = {
+    primary: styles.inputWrapperPrimary,
+    secondary: styles.inputWrapperSecondary,
+}
+
 
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     hint?: React.ReactNode;
     action?: React.ReactNode;
     actionType?: keyof typeof actionStyles
+    variant?: keyof typeof variantStyles
 }
 
 export const Input: FC<IProps> = ({
@@ -32,18 +38,15 @@ export const Input: FC<IProps> = ({
     action,
     actionType = 'button',
     className,
+    variant = 'primary',
     ...props
 
 }) => {
 
-    const { formState, getValues, register } = useFormContext() ?? {};
-    let hasValue = props.value;
-    let error;
+    const { register } = useFormContext() ?? {};
     let reg = {}
 
     if (name) {
-        hasValue = getValues(name!);
-        error = get(formState.errors, name)?.message as string | undefined;
         reg = register(name as string)
     }
 
@@ -53,7 +56,7 @@ export const Input: FC<IProps> = ({
                 {label}
             </label>
         }
-        <div className={clsx(styles.inputWrapper, props.disabled && styles.inputWrapperDisabled)}>
+        <div className={clsx(styles.inputWrapper, props.disabled && styles.inputWrapperDisabled, variantStyles[variant])}>
             <input
                 type="text"
                 className={styles.input}
@@ -71,7 +74,7 @@ export const Input: FC<IProps> = ({
 
 export const PhoneInput: FC<IProps> = ({ label, name, className, ...props }) => {
 
-    const { formState, getValues } = useFormContext();
+    const { getValues } = useFormContext();
     const value = getValues(name!);
     const { field } = useController({
         name: name as string,
@@ -88,9 +91,6 @@ export const PhoneInput: FC<IProps> = ({ label, name, className, ...props }) => 
             field.onChange(phone)
         },
     });
-
-    const hasValue = inputValue;
-    const error = get(formState.errors, name)?.message as string | undefined;
 
 
     return <div className={clsx(styles.wrapper, className)}>

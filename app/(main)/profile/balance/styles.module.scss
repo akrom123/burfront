@@ -14,6 +14,7 @@
         height: auto;
         padding-left: 18px;
         padding-right: 18px;
+        cursor: pointer;
     }
 
     &Card {
@@ -73,6 +74,7 @@
 
         button {
             height: 60px;
+            cursor: pointer;
         }
     }
 }

@@ -13,8 +13,8 @@ interface IProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
     description: React.ReactNode,
 }
 
-export const Notification = React.forwardRef<HTMLDivElement, IProps>(({ title, description }) => {
-    return <div className={styles.notification}>
+export const Notification = React.forwardRef<HTMLDivElement, IProps>(({ title, description, className, ...props }, ref) => {
+    return <div className={clsx(styles.notification, className)} ref={ref} {...props}>
         <Icon name={'notification-status'} size={35} className={styles.notificationIcon} />
         <div className={styles.notificationContent}>
             <div className={styles.notificationTitle}>
@@ -50,7 +50,6 @@ export const NotificationToast = React.forwardRef<HTMLDivElement, INotificationT
         setDisplay('hiding');
         onClose?.(event);
         clear();
-
         setTimeout(() => {
             if (isMounted()) {
                 setDisplay('hide');
@@ -66,6 +65,7 @@ export const NotificationToast = React.forwardRef<HTMLDivElement, INotificationT
         <Notification
             onClick={() => handleClose()}
             ref={mergeRefs(targetRef, ref)}
+            className={styles.notificationToast}
             {...rest}
         />
     );

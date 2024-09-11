@@ -75,6 +75,13 @@
         }
     }
 
+    &Notifications {
+        width: 360px;
+        position: absolute;
+        top: 0;
+        left: calc(100% + 10px);
+        z-index: 1;
+    }
 }
 
 @media (max-width: 768px) {

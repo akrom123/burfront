@@ -1,6 +1,5 @@
 import RSModal, { ModalProps } from 'rsuite/Modal';
 import './styles.scss';
-import styles from './styles.module.scss';
 import { FC, useEffect } from 'react';
 import { Icon } from '../Icon';
 import React from 'react';
@@ -21,8 +20,10 @@ export const Modal: FC<IProps> = ({ title, children, onClose, ...props }) => {
         };
     }, [props.open])
     return <RSModal {...props} onClose={onClose} ref={ref}>
-        <Icon name="close-circle" size={24} onClick={onClose} className={styles.modalClose} />
-        <div className={styles.modalTitle}>{title}</div>
-        {children}
+        <Icon name="close-circle" size={24} onClick={onClose} className={'rs-modal-close'} />
+        <div className={'rs-modal-content-inner'}>
+            <div className={'rs-modal-title'}>{title}</div>
+            {children}
+        </div>
     </RSModal>
 }

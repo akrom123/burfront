@@ -26,9 +26,15 @@
             cursor: pointer;
             white-space: nowrap;
 
-            &Active {
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &Active,
+            &Active:hover {
                 background-color: var(--color-gold);
                 color: var(--color-black2);
+                cursor: default;
             }
         }
     }
@@ -46,9 +52,15 @@
             cursor: pointer;
             white-space: nowrap;
 
-            &Active {
+            &:hover {
+                color: color-mix(in srgb, var(--color-text) 60%, transparent);
+            }
+
+            &Active,
+            &Active:hover {
                 background-color: var(--color-gold);
                 color: var(--color-black2);
+                cursor: default;
             }
         }
     }

@@ -1,33 +1,37 @@
 'use client'
 
-import { Heading } from "@/components/Heading";
 import { Notification, NotificationToast } from "@/components/ui/Notification";
-import styles from './Notifications.module.scss';
-import { useMediaQuery } from "@/hooks";
+import styles from './styles.module.scss';
 import { useStores } from "@/contexts";
 import ClickAwayListener from "react-click-away-listener";
-import { FC, useEffect } from "react";
+import { FC, HTMLAttributes, useEffect } from "react";
 import { useToaster } from "@/components/ui/Toaster";
+import clsx from "clsx";
+import { observer } from "mobx-react-lite";
 
 
-interface IProps {
-    onClose: () => void;
+interface IProps extends HTMLAttributes<HTMLDivElement> {
+    onClose?: () => void;
 }
 
-export const Notifications: FC<IProps> = ({ onClose }) => {
-    const { appStore } = useStores();
+export const Notifications: FC<IProps> = observer(({ onClose = () => { }, className }) => {
+    const { appStore } = useStores()
     const toaster = useToaster()
 
     useEffect(() => {
         toaster.push(
-            <NotificationToast title={appStore.notifications[0].title} description={appStore.notifications[0].description} onClose={() => toaster.remove('')} />,
+            <NotificationToast
+                title={appStore.notifications[0].title}
+                description={appStore.notifications[0].description}
+                onClose={() => toaster.remove('')}
+            />,
             { placement: 'bottomStart', duration: 3000 }
         )
-    }, [])
+    }, [toaster, appStore.notifications])
 
     return (
         <ClickAwayListener onClickAway={onClose}>
-            <div className={styles.notifications}>
+            <div className={clsx(styles.notifications, className)}>
                 <div className={styles.notificationsHeader}>
                     <div className={styles.notificationsTitle}>Уведомления</div>
                     <div className={styles.notificationsClear}>Очистить</div>
@@ -40,4 +44,4 @@ export const Notifications: FC<IProps> = ({ onClose }) => {
             </div>
         </ClickAwayListener>
     );
-}
+})
