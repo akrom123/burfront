@@ -54,12 +54,22 @@ export default function Page() {
                     /> : <div className={styles.cardsList}>
                         {data.map((row, index) => (
                             <div key={index} className={styles.card}>
-                                {columns.map((column, index) => (
-                                    <div className={styles.cardCol} key={column.field}>
-                                        <div className={styles.cardColTitle}>{column.title}</div>
-                                        <div className={styles.cardColValue}>{row[column.field]}</div>
-                                    </div>
-                                ))}
+                                <div className={styles.cardRow}>
+                                    {columns.slice(0, 3).map((column, index) => (
+                                        <div className={styles.cardCol} key={column.field}>
+                                            <div className={styles.cardColTitle}>{column.title}</div>
+                                            <div className={styles.cardColValue}>{row[column.field]}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className={styles.cardRow}>
+                                    {columns.slice(3, 5).map((column, index) => (
+                                        <div className={styles.cardCol} key={column.field}>
+                                            <div className={styles.cardColTitle}>{column.title}</div>
+                                            <div className={styles.cardColValue}>{row[column.field]}</div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         ))}
                     </div>

@@ -46,12 +46,20 @@
     padding: 15px;
     border: 1px solid var(--color-border);
     background-color: #2C2D2F;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     border-radius: 8px;
     gap: 10px;
 
+    &Row {
+        display: flex;
+        gap: 10px;
+    }
+
     &Col {
+        flex-grow: 1;
+        flex-basis: 1;
         display: flex;
         flex-direction: column;
         gap: 3px;

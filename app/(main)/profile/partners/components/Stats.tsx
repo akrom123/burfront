@@ -43,12 +43,22 @@ export const Stats = () => {
             /> : <div className={styles.statsCardsList}>
                 {data.map((row, index) => (
                     <div key={index} className={styles.statsCard}>
-                        {columns.map((column, index) => (
-                            <div className={styles.statsCardCol} key={column.field}>
-                                <div className={styles.statsCardColTitle}>{column.title}</div>
-                                <div className={styles.statsCardColValue}>{row[column.field]}</div>
-                            </div>
-                        ))}
+                        <div className={styles.statsCardRow}>
+                            {columns.slice(0, 3).map((column, index) => (
+                                <div className={styles.statsCardCol} key={column.field}>
+                                    <div className={styles.statsCardColTitle}>{column.title}</div>
+                                    <div className={styles.statsCardColValue}>{row[column.field]}</div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className={styles.statsCardRow}>
+                            {columns.slice(3, 6).map((column, index) => (
+                                <div className={styles.statsCardCol} key={column.field}>
+                                    <div className={styles.statsCardColTitle}>{column.title}</div>
+                                    <div className={styles.statsCardColValue}>{row[column.field]}</div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>
