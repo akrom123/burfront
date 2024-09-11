@@ -8,7 +8,7 @@ import useDelayedClosure from "rsuite/esm/toaster/hooks/useDelayedClosure";
 import { mergeRefs } from "@reactuses/core";
 import clsx from "clsx";
 
-interface IProps extends HTMLAttributes<HTMLDivElement> {
+interface IProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
     title: React.ReactNode,
     description: React.ReactNode,
 }
@@ -27,6 +27,8 @@ export const Notification = React.forwardRef<HTMLDivElement, IProps>(({ title, d
     </div>
 })
 
+Notification.displayName = 'Notification';
+
 
 interface INotificationToastProps extends IProps {
     placement?: string;
@@ -34,7 +36,6 @@ interface INotificationToastProps extends IProps {
     onClose?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
     className?: string;
 }
-
 
 export const NotificationToast = React.forwardRef<HTMLDivElement, INotificationToastProps>((props, ref) => {
     const { placement, duration = 2000, className, onClose = () => { }, ...rest } = props;
