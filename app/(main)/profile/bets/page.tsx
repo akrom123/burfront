@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/Form';
 import { Icon } from '@/components/ui/Icon';
 import { useMediaQuery } from '@/hooks';
 import styles from './styles.module.scss';
-import { Table } from '@/components/ui/Table';
+import { TableCollapsible } from '@/components/ui/TableCollapsible';
 
 export default function Page() {
 
@@ -62,7 +62,7 @@ export default function Page() {
                 </FiltersWrapper>
 
                 {
-                    !isXS ? <Table
+                    !isXS ? <TableCollapsible
                         columns={columns}
                         data={data}
                     /> : <div className={styles.cardsList}>
