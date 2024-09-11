@@ -8,7 +8,7 @@
 .rs-modal {
     width: auto;
     overflow: auto;
-
+    -webkit-overflow-scrolling: touch;
     &-content {
         padding: 0;
         background-color: var(--color-bg);
@@ -19,6 +19,7 @@
         display: flex;
         flex-direction: column;
         overflow: auto;
+        -webkit-overflow-scrolling: touch;
 
         &-inner {
             padding: 36px 24px 24px;
@@ -76,9 +77,13 @@
         width: 100%;
         margin: 0;
         max-width: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
 
         &-content {
             border-radius: 20px 20px 0 0;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
 
             &-inner {
                 padding: 28px 24px 24px;
