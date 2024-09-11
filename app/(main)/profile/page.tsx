@@ -141,7 +141,7 @@ const NotificationsCard = observer(() => {
         compact
         bordered
         actions={
-            isXS && <Icon name="notification" size={35} onClick={() => appStore.toggleModal('notifications', true)} />
+            isXS && <Icon name="notification" size={24} onClick={() => appStore.toggleModal('notifications', true)} />
         }
     >
         <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems={isXS ? 'stretch' : 'center'}>
