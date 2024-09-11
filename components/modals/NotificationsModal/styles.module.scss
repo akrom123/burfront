@@ -6,7 +6,30 @@
     overflow: hidden;
 
     .notificationsList {
-        overflow: auto;
+        overflow-y: auto;
         flex: 1;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--color-gold);
+            border-radius: 3px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        .notificationsList {
+            clip-path: inset(0 10px 0 0);
+            margin-right: -10px;
+            padding-right: 10px;
+        }
     }
 }
