@@ -68,7 +68,7 @@ export default function Page() {
                         data={data}
                     /> : <div className={styles.cardsList}>
                         {data.map((row, index) => (
-                            <Card key={index} row={row} />
+                            <BetCard key={index} row={row} />
                         ))}
                     </div>
                 }
@@ -77,7 +77,7 @@ export default function Page() {
     );
 }
 
-const Card = ({ row }: any) => {
+const BetCard = ({ row }: any) => {
     const [isOpen, setIsOpen] = useState(false)
     return <div className={styles.card}>
         <div className={styles.cardHeader}>
