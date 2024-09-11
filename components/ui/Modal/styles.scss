@@ -78,6 +78,10 @@
         overflow: auto;
         -webkit-overflow-scrolling: touch;
 
+        &-open {
+            overflow: auto !important;
+        }
+
         &-content {
             border-radius: 20px 20px 0 0;
             overflow: auto;
