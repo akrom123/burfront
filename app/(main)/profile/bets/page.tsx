@@ -68,12 +68,33 @@ export default function Page() {
                     /> : <div className={styles.cardsList}>
                         {data.map((row, index) => (
                             <div key={index} className={styles.card}>
-                                {columns.map((column, index) => (
-                                    <div className={styles.cardCol} key={column.field}>
-                                        <div className={styles.cardColTitle}>{column.title}</div>
-                                        <div className={styles.cardColValue}>{row[column.field]}</div>
+                                <div className={styles.cardHeader}>
+                                    <div className={styles.cardHeaderLeft}>
+                                        <div className={styles.cardHeaderLeftTitle}>Игра</div>
+                                        <div>{row.game}</div>
                                     </div>
-                                ))}
+                                    <div className={styles.cardHeaderDate}>
+                                        <Icon name="clock" size={12} className={styles.cardHeaderDateIcon} />
+                                        <div>{row.registeredDate}</div>
+                                    </div>
+                                </div>
+                                <div className={styles.cardRows}>
+                                    <div className={styles.cardRow}>
+                                        <div className={styles.cardRowTitle}>Тип</div>
+                                        <div className={styles.cardRowValue}>{row.type1}</div>
+                                    </div>
+                                    <div className={styles.cardRow}>
+                                        <div className={styles.cardRowTitle}>Тип</div>
+                                        <div className={styles.cardRowValue}>{row.type2}</div>
+                                    </div>
+                                    <div className={styles.cardRow}>
+                                        <div className={styles.cardRowTitle}>Тип</div>
+                                        <div className={styles.cardRowValue}>{row.type3}</div>
+                                    </div>
+                                </div>
+                                <div className={styles.cardAction}>
+                                    Показать детали
+                                </div>
                             </div>
                         ))}
                     </div>
