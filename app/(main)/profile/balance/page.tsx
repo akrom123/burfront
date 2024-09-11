@@ -69,6 +69,7 @@ export default function Page() {
                                             <div className={styles.cardColValue}>{row[column.field]}</div>
                                         </div>
                                     ))}
+                                    <div className={styles.cardCol} />
                                 </div>
                             </div>
                         ))}
