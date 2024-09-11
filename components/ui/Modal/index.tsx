@@ -11,14 +11,14 @@ interface IProps extends ModalProps {
 
 export const Modal: FC<IProps> = ({ title, children, onClose, ...props }) => {
     const ref = React.useRef<HTMLElement>(null);
-    useEffect(() => {
-        if (props.open) {
-            disableBodyScroll(ref.current!);
-        }
-        return () => {
-            enableBodyScroll(ref.current!);
-        };
-    }, [props.open])
+    // useEffect(() => {
+    //     if (props.open) {
+    //         disableBodyScroll(ref.current!);
+    //     }
+    //     return () => {
+    //         enableBodyScroll(ref.current!);
+    //     };
+    // }, [props.open])
     return <RSModal {...props} onClose={onClose} ref={ref} overflow>
         <Icon name="close-circle" size={24} onClick={onClose} className={'rs-modal-close'} />
         <div className={'rs-modal-content-inner'}>
