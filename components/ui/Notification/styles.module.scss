@@ -1,0 +1,38 @@
+.notification {
+    padding: 12px;
+    background-color: #2B2E33;
+    display: flex;
+    gap: 10px;
+    border-radius: 15px;
+    max-width: 360px;
+    margin-bottom: 10px;
+
+    &Icon {
+        color: var(--color-gold);
+        flex-shrink: 0;
+    }
+
+    &Content {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    &Title {
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 15px;
+    }
+
+    &Description {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 768px) {
+    .notification {
+        border-radius: 15px;
+        padding: 10px 12px
+    }
+}

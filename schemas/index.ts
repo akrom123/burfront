@@ -9,4 +9,8 @@ export const registrationModelSchema = z.object({
     ageConfirm: z.boolean().default(false),
 });
 
-export type TregistrationModelSchema = z.infer<typeof registrationModelSchema>;
+export const authModelSchema = z.object({
+    login: z.string(),
+    password: z.string(),
+});
+

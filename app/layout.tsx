@@ -3,6 +3,9 @@ import "./globals.scss";
 import localFont from 'next/font/local'
 import CustomProvider from "rsuite/esm/CustomProvider";
 import type { Viewport } from 'next'
+import { StoreWrapper } from "@/contexts";
+import { AuthModal } from "@/components/modals/AuthModal";
+import { RegistrationModal } from "@/components/modals/RegistrationModal";
 
 
 const sfProTextFont = localFont({
@@ -69,8 +72,12 @@ export default function RootLayout({
     <html>
       <body className={sfProTextFont.className}>
         <CustomProvider theme="dark">
-          {children}
+          <StoreWrapper>
+            {children}
+          </StoreWrapper>
         </CustomProvider>
+        <AuthModal />
+        <RegistrationModal />
       </body>
     </html>
   );

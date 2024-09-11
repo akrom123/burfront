@@ -11,8 +11,10 @@
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@reactuses/core": "^5.0.19",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "clsx": "^2.1.1",
     "google-libphonenumber": "^3.2.38",
+    "mobx-react-lite": "^4.0.7",
     "next": "14.2.5",
     "react": "^18",
     "react-click-away-listener": "^2.2.3",
@@ -26,6 +28,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/body-scroll-lock": "^3.1.2",
     "@types/google-libphonenumber": "^7.4.30",
     "@types/node": "^20",
     "@types/react": "^18",

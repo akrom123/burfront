@@ -62,6 +62,7 @@
     border: 1px solid var(--color-border);
     background-color: #2C2D2F;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
     display: grid;
     gap: 16px;
     border-radius: 8px;

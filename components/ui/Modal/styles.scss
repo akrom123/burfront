@@ -1,1 +1,35 @@
 @import 'rsuite/Modal/styles/index.css';
+
+.rs-modal-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.rs-modal {
+    width: auto;
+
+    &-content {
+        padding: 36px 24px 24px;
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        position: relative;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rs-modal-wrapper {
+        align-items: flex-end;
+    }
+
+    .rs-modal {
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+
+        &-content {
+            padding-top: 28px;
+            border-radius: 20px 20px 0 0;
+        }
+    }
+}

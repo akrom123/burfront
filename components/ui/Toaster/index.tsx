@@ -32,9 +32,6 @@ const types = {
 export const Toast = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
     const { type = 'default', placement, duration = 2000, message, className, onClose = () => { }, ...rest } = props;
 
-    // const icon = type == 'success' ? 'tick-circle' : type === 'error' ? 'danger' : 'tick-circle';
-
-
     const [display, setDisplay] = useState<TypeAttributes.DisplayState>('show');
     const isMounted = useIsMounted();
     const targetRef = React.useRef<HTMLDivElement>(null);
@@ -66,9 +63,8 @@ export const Toast = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
             {...rest}
             className={classes}
         >
-            {/* <Icon name={icon} className={styles.toastIcon} /> */}
             <div className={styles.toastMessage}>{message}</div>
-            <Icon name="close-circle" size={20} onClick={handleClose} className={styles.toastClose} />
+            <Icon name="close-circle" size={24} onClick={handleClose} className={styles.toastClose} />
         </div>
     );
 });

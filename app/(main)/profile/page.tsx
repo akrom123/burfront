@@ -1,13 +1,16 @@
 'use client'
 
+import { AuthForm } from '@/components/AuthForm';
 import { Button } from '@/components/ui/Button';
 import { Card } from "@/components/ui/Card";
-import { Input, Switch } from '@/components/ui/Form';
+import { Form, Input, PhoneInput, Switch } from '@/components/ui/Form';
+import { Modal } from '@/components/ui/Modal';
 import { Stack, VStack } from '@/components/ui/Stack';
 import { Tabs } from "@/components/ui/Tabs";
 import { VIPBlock } from '@/components/vip/VIPBlock';
 import { useMediaQuery } from '@/hooks';
 import { useState } from "react";
+import { z } from 'zod';
 
 export default function Page() {
     const tabs = [
@@ -49,7 +52,7 @@ export default function Page() {
                     tab === 2 && <Password />
                 }
             </Card>
-            <VIPCard/>
+            <VIPCard />
             <NotificationsCard />
             <PromocodeCard />
         </>
@@ -60,65 +63,70 @@ export default function Page() {
 const PersonalInfo = () => {
     const { isXS } = useMediaQuery()
 
-    return <VStack alignItems='stretch' spacing={isXS ? 18 : 30}>
+    return <Form validationSchema={z.object({})} defaultValues={{ name: "Иван Иванов" }}><VStack alignItems='stretch' spacing={isXS ? 18 : 30}>
         <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems='stretch'>
             <Stack.Item grow={1} basis={0}>
                 <Input label='ID профиля' disabled value={'1233213'} />
             </Stack.Item>
             <Stack.Item grow={1} basis={0}>
-                <Input label='Имя' value={'Иван Иванов'} />
+                <Input label='Имя' name="name" />
             </Stack.Item>
         </Stack>
         <Stack.Item alignSelf='flex-end'>
             <Button>Сохранить</Button>
         </Stack.Item>
     </VStack>
+    </Form>
 }
 
 const PhoneAndEmail = () => {
     const { isXS } = useMediaQuery()
 
-    return <VStack alignItems='stretch' spacing={isXS ? 18 : 30}>
-        <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems='stretch'>
-            <Stack.Item grow={1} basis={0}>
-                <Input label='Телефон' value={'79600002222'} />
+    return <Form validationSchema={z.object({})} defaultValues={{ phone: '+79504939812', email: 'test@example.com' }}>
+        <VStack alignItems='stretch' spacing={isXS ? 18 : 30}>
+            <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems='stretch'>
+                <Stack.Item grow={1} basis={0}>
+                    <PhoneInput label='Телефон' name="phone" />
+                </Stack.Item>
+                <Stack.Item grow={1} basis={0}>
+                    <Input label='Email' name="email" />
+                </Stack.Item>
+            </Stack>
+            <Stack.Item alignSelf='flex-end'>
+                <Button>Сохранить</Button>
             </Stack.Item>
-            <Stack.Item grow={1} basis={0}>
-                <Input label='Email' value="test@example.com" />
-            </Stack.Item>
-        </Stack>
-        <Stack.Item alignSelf='flex-end'>
-            <Button>Сохранить</Button>
-        </Stack.Item>
-    </VStack>
+        </VStack>
+    </Form>
 }
 
 const Password = () => {
     const { isXS } = useMediaQuery()
 
-    return <VStack alignItems='stretch' spacing={isXS ? 18 : 30}>
-        <Stack.Item grow={1} basis={0}>
-            <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems='stretch'>
+    return <Form validationSchema={z.object({})} defaultValues={{}}>
+        <VStack alignItems='stretch' spacing={isXS ? 18 : 30}>
+            <Stack.Item grow={1} basis={0}>
+                <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems='stretch'>
+                    <Stack.Item grow={1} basis={0}>
+                        <Input label='Текущий пароль' type='password' name="password" />
+                    </Stack.Item>
+                    {
+                        !isXS && <Stack.Item grow={1} basis={0} />
+                    }
+                </Stack>
+            </Stack.Item>
+            <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems={isXS ? 'stretch' : 'center'}>
                 <Stack.Item grow={1} basis={0}>
-                    <Input label='Текущий пароль' type='password' />
+                    <Input label='Новый пароль' type='password' name='new_password' />
                 </Stack.Item>
-                {
-                    !isXS && <Stack.Item grow={1} basis={0} />
-                }
+                <Stack.Item grow={1} basis={0}>
+                    <Input label='Повторите новый пароль' type='password' name='confirm_new_password' />
+                </Stack.Item>
             </Stack>
-        </Stack.Item>
-        <Stack direction={isXS ? 'column' : 'row'} spacing={isXS ? 18 : 30} alignItems={isXS ? 'stretch' : 'center'}>
-            <Stack.Item grow={1} basis={0}>
-                <Input label='Новый пароль' type='password' />
+            <Stack.Item alignSelf='flex-end'>
+                <Button>Сохранить</Button>
             </Stack.Item>
-            <Stack.Item grow={1} basis={0}>
-                <Input label='Повторите новый пароль' type='password' />
-            </Stack.Item>
-        </Stack>
-        <Stack.Item alignSelf='flex-end'>
-            <Button>Сохранить</Button>
-        </Stack.Item>
-    </VStack>
+        </VStack>
+    </Form>
 }
 
 const NotificationsCard = () => {
@@ -154,6 +162,6 @@ const PromocodeCard = () => {
 
 const VIPCard = () => {
     return <Card title="VIP" compact bordered>
-        <VIPBlock/>
+        <VIPBlock />
     </Card>
 }

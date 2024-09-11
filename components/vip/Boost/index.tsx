@@ -15,6 +15,7 @@ export const Boost: FC<IProps> = () => {
             </div>
             <Countdown value={90000} />
         </div>
+        <div className={styles.boostButton}>Забрать</div>
         <div className={styles.boostNote}>
             {"If you're just starting to place bets or use the site, then initial verification status will be enough. Initial status has lower limits than full status accounts"}
         </div>

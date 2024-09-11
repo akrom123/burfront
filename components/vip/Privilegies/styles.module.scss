@@ -6,6 +6,7 @@
 
 @media (max-width: 768px) {
     .privilegies {
+        gap: 24px;
         grid-template-columns: 1fr 1fr;
     }
 }

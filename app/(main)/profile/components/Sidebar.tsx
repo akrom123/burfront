@@ -1,16 +1,19 @@
 'use client'
 
-import { Heading } from "@/components/Heading";
-import { PromoCard } from "@/components/PromoCard";
 import styles from './Sidebar.module.scss';
 import { Icon } from "@/components/ui/Icon";
 import clsx from "clsx";
 import { Button } from "@/components/ui/Button";
 import { ActiveLink } from "@/components/ui/ActiveLink";
 import { useMediaQuery } from "@/hooks";
+import { useStores } from "@/contexts";
+import { useState } from "react";
+import { Notifications } from './Notifications';
 
 export const Sidebar = () => {
     const { isXS } = useMediaQuery()
+    const { appStore } = useStores();
+    const [notificationsOpen, setNotificationsOpen] = useState(false);
     return (
         <div className={styles.sidebar}>
             <div className={styles.sidebarNav}>
@@ -21,7 +24,12 @@ export const Sidebar = () => {
                         </div>
                         <span>Иван Иванов</span>
                     </div>
-                    <Icon name="notification" className={styles.sidebarNavItemArrow} size={24} />
+                    <Icon
+                        name="notification"
+                        className={styles.sidebarNavItemBell}
+                        size={24}
+                        onClick={() => setNotificationsOpen(!notificationsOpen)}
+                    />
                 </div>
                 <ActiveLink href="/profile" className={styles.sidebarNavItem} activeClassName={styles.sidebarNavItemActive}>
                     <div className={styles.sidebarNavItemIcon}>
@@ -67,7 +75,8 @@ export const Sidebar = () => {
                 </ActiveLink>
             </div>
 
-            {!isXS && <Button variant="outline">Выйти</Button>}
+            {!isXS && <Button variant="outline" onClick={() => appStore.setLoggedIn(false)}>Выйти</Button>}
+            {!isXS && notificationsOpen && <Notifications onClose={() => setNotificationsOpen(false)} />}
         </div>
     );
 }

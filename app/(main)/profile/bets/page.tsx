@@ -1,7 +1,6 @@
 'use client'
 
 import { Filter, FiltersWrapper } from '@/components/Filter';
-import { Button } from '@/components/ui/Button';
 import { Card } from "@/components/ui/Card";
 import { Input } from '@/components/ui/Form';
 import { Icon } from '@/components/ui/Icon';

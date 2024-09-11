@@ -8,6 +8,7 @@ import { useState } from "react"
 import ClickAwayListener from "react-click-away-listener"
 import clsx from "clsx"
 import { ActiveLink } from "@/components/ui/ActiveLink"
+import { useStores } from "@/contexts"
 
 
 export const Profile = () => {
@@ -15,6 +16,7 @@ export const Profile = () => {
     const [isOpen, setIsOpen] = useState
         (false)
     const { isXS } = useMediaQuery()
+    const { appStore } = useStores()
 
     return <ClickAwayListener onClickAway={() => setIsOpen(false)}>
         <div className={styles.headerProfile}>
@@ -61,7 +63,7 @@ export const Profile = () => {
                             <Icon name="arrow-down" className={styles.headerProfileNavItemArrow} rotate={270} size={12} />
                         </ActiveLink>
                     </div>
-                    <Button variant="outline">Выйти</Button>
+                    <Button variant="outline" onClick={() => appStore.setLoggedIn(false)}>Выйти</Button>
                 </div>
             }
         </div>

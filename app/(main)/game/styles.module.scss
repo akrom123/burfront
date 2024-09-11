@@ -1,0 +1,21 @@
+.game {
+    display: flex;
+
+    &Image {
+        max-width: 100%;
+        height: auto;
+        padding-top: 0;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .game {
+        margin-left: -24px;
+        margin-right: -24px;
+
+        &Image {
+            border-radius: 0;
+        }
+    }
+}

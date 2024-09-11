@@ -13,8 +13,8 @@ export const Rakeback = () => {
                     </div>))
             }
         </div>
-        <div className={styles.rakebackButton}>Получить рейбек</div>
-        <div className={styles.rakebackDescription}>
+        <div className={styles.rakebackButton}>Получить рейкбек</div>
+        <div className={styles.rakebackNote}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, repudiandae.
         </div>
     </div>

@@ -43,6 +43,11 @@
             &Item {
                 padding: 6px;
                 cursor: pointer;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: #363A40;
+                }
             }
         }
     }

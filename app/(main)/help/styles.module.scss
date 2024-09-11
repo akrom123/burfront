@@ -3,9 +3,11 @@
         display: flex;
         gap: 20px;
     }
+
     &Sidebar {
         width: 270px;
     }
+
     &Content {
         flex: 1;
         display: flex;
@@ -13,18 +15,21 @@
         gap: 40px;
         align-items: stretch;
     }
+
     &Group {
         margin-bottom: 40px;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
+
         &Title {
             font-weight: 600;
             font-size: 18px;
             margin-bottom: 22px;
         }
     }
+
     &Categories {
         background-color: #242527;
         border-radius: 8px;
@@ -34,6 +39,7 @@
         flex-direction: column;
         gap: 8px;
     }
+
     &Category {
         cursor: pointer;
         padding: 18px 30px 20px;
@@ -42,47 +48,57 @@
         background-color: #323437;
         border: 1px solid #242527;
         align-items: center;
+
         &Text {
             flex: 1;
         }
-        &:hover, &Active {
+
+        &:hover,
+        &Active {
             color: var(--color-gold);
         }
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .help {
         &Container {
             flex-direction: column;
         }
+
         &Sidebar {
             width: 100%;
         }
+
         &Categories {
             padding: 0;
             background: none;
             border: 0;
             flex-direction: row;
             gap: 10px;
-            margin-left:-24px;
+            margin-left: -24px;
             margin-right: -24px;
             padding-left: 24px;
             overflow: auto;
-            clip-path: inset(0 0 10px 0);                   
+            clip-path: inset(0 0 10px 0);
             border-radius: 0;
+
             ::-webkit-scrollbar {
-                    display: none;
+                display: none;
             }
         }
+
         &Category {
             margin-bottom: 10px;
             padding: 16px 24px;
             white-space: nowrap;
+
             &Arrow {
                 display: none !important;
             }
-            &Active, &:hover {
+
+            &Active,
+            &:hover {
                 background-color: var(--color-gold);
                 color: var(--color-text);
             }

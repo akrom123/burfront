@@ -8,18 +8,21 @@ import { Button } from "../ui/Button"
 import { Icon } from "../ui/Icon"
 import { useMediaQuery } from "@/hooks"
 import { Footer } from "../Footer"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { ActiveLink } from "../ui/ActiveLink"
 import Link from "next/link"
 import { Profile } from "./Profile"
+import { useStores } from "@/contexts"
+import { observer } from "mobx-react-lite"
 
 
-export const Header: FC = () => {
+export const Header: FC = observer(() => {
     const { isXS } = useMediaQuery()
-    const [loggedIn, setLoggedIn] = useState(false)
     const pathname = usePathname()
+    const router = useRouter()
     const [isInitialized, setIsInitialized] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
+    const { appStore } = useStores()
 
     useEffect(() => {
         setIsInitialized(true)
@@ -60,12 +63,12 @@ export const Header: FC = () => {
         {
             !isOpen && <>
                 {
-                    loggedIn ? <>
+                    appStore.isLoggedIn ? <>
                         <Balance />
-                        <Profile/>
+                        <Profile />
                     </> : <>
-                        {!isXS && <Button>JOIN NOW</Button>}
-                        <Button icon={<Icon name="login" size={21} />} variant="secondary" onClick={() => setLoggedIn(true)} />
+                        {!isXS && <Button onClick={() => router.push('/registration')}>JOIN NOW</Button>}
+                        <Button icon={<Icon name="login" size={21} />} variant="secondary" onClick={() => appStore.toggleModal('auth', true)} />
                     </>
                 }
             </>
@@ -82,14 +85,16 @@ export const Header: FC = () => {
             <div className={styles.headerMobileContent}>
                 {nav}
                 <div className={styles.headerMobileButtons}>
-                    <Button>JOIN NOW</Button>
-                    <Button variant="secondary">Log in</Button>
+                    <Button onClick={() => {
+                        isXS ? appStore.toggleModal('registration', true) : router.push('/registration')
+                    }}>JOIN NOW</Button>
+                    <Button variant="secondary" onClick={() => appStore.toggleModal('auth', true)}>Log in</Button>
                 </div>
             </div>
             <Footer copyright={false} />
         </div>
     }
-}
+})
 
 const Balance = () => {
     return <Link href={'/deposit'} className={styles.headerBalance}>
