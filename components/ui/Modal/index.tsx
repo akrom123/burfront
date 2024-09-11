@@ -19,7 +19,7 @@ export const Modal: FC<IProps> = ({ title, children, onClose, ...props }) => {
             enableBodyScroll(ref.current!);
         };
     }, [props.open])
-    return <RSModal {...props} onClose={onClose} ref={ref}>
+    return <RSModal {...props} onClose={onClose} ref={ref} overflow>
         <Icon name="close-circle" size={24} onClick={onClose} className={'rs-modal-close'} />
         <div className={'rs-modal-content-inner'}>
             <div className={'rs-modal-title'}>{title}</div>
