@@ -15,20 +15,38 @@
         }
 
         &Text {
-            font-size: 14px;
+            font-size: 12px;
         }
     }
 
     &Icon {
         transition: .3s ease all;
-        color: #E0E5F2;
+        width: 22px;
+        height: 22px;
+        border: 1px solid var(--color-border2);
+        background-color: #2D2F32;
+        border-radius: 4px;
+        padding: 3px;
+
+        &:after {
+            visibility: hidden;
+            content: '';
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+
+            background-color: var(--color-gold);
+            display: block;
+        }
     }
 
     &Input {
         display: none;
 
         &:checked+.checkboxIcon {
-            color: var(--color-primary);
+            &:after {
+                visibility: visible;
+            }
         }
     }
 }

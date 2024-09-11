@@ -3,6 +3,9 @@
 import { FC, InputHTMLAttributes } from 'react'
 import styles from './styles.module.scss'
 import clsx from 'clsx';
+import { get, useController, useFormContext } from 'react-hook-form';
+import { usePhoneInput } from 'react-international-phone';
+import { mergeRefs } from '@reactuses/core';
 
 
 const actionStyles = {
@@ -17,11 +20,21 @@ const actionStyles = {
 
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
+    hint?: string;
     action?: React.ReactNode;
     actionType?: keyof typeof actionStyles
 }
 
-export const Input: FC<IProps> = ({ label, name, action, actionType = 'button', className, ...props }) => {
+export const Input: FC<IProps> = ({
+    label,
+    name,
+    hint,
+    action,
+    actionType = 'button',
+    className,
+    ...props
+
+}) => {
     return <div className={clsx(styles.wrapper, className)}>
         {
             label && <label className={styles.label}>
@@ -33,6 +46,50 @@ export const Input: FC<IProps> = ({ label, name, action, actionType = 'button', 
             {action && <div className={clsx(styles.action, actionStyles[actionType])}>
                 {action}
             </div>}
+        </div>
+        {hint && <div className={styles.hint}>{hint}</div>}
+    </div>
+}
+
+export const PhoneInput: FC<IProps> = ({ label, name, className, ...props }) => {
+
+    const { formState, getValues } = useFormContext();
+    const value = getValues(name!);
+    const { field } = useController({
+        name: name as string,
+    })
+
+    const {
+        inputValue,
+        handlePhoneValueChange,
+        inputRef,
+    } = usePhoneInput({
+        defaultCountry: 'ru',
+        value,
+        onChange: ({ phone }) => {
+            field.onChange(phone)
+        },
+    });
+
+    const hasValue = inputValue;
+    const error = get(formState.errors, name)?.message as string | undefined;
+
+
+    return <div className={clsx(styles.wrapper, className)}>
+        {
+            label && <label className={styles.label}>
+                {label}
+            </label>
+        }
+        <div className={clsx(styles.inputWrapper, props.disabled && styles.inputWrapperDisabled)}>
+            <input
+                type="text"
+                className={styles.input}
+                {...props}
+                ref={mergeRefs(inputRef, field.ref)}
+                value={inputValue}
+                onChange={handlePhoneValueChange}
+            />
         </div>
     </div>
 }

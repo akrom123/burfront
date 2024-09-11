@@ -1,0 +1,40 @@
+.root404 {
+    background: url('/images/404-bg.jpg') top right no-repeat var(--color-main-bg);
+    background-size: contain;
+}
+
+.hero {
+    display: flex;
+    max-width: 70%;
+    flex-direction: column;
+    gap: 36px;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+.image {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+
+.title {
+    font-size: 52px;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .root404 {
+        background-size: cover;
+    }
+
+    .hero {
+        max-width: 100%;
+        padding-top: 32px;
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+}

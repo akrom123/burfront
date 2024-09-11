@@ -10,7 +10,6 @@ import Link from "next/link";
 export default function Page() {
   return (
     <>
-      <Link href="/auth"><div style={{ width: 100, height: 100, background: 'red' }}></div></Link>
       <Banner />
       <div className="container container-main">
         <Features />

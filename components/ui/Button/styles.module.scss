@@ -69,10 +69,21 @@
 }
 
 @media (max-width: 767px) {
+
+
     .button {
+
+        &Primary,
+        &Secondary,
+        &Tertiary {
+            padding: 0 20px;
+        }
+
         &Square {
             width: 42px;
             height: 42px;
+            padding: 0;
         }
+
     }
 }

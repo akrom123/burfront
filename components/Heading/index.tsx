@@ -14,6 +14,10 @@ interface IProps extends HTMLProps<HTMLDivElement> {
     children: React.ReactNode
 }
 
-export const Heading: FC<IProps> = ({children, level, center =  false}) => {
-    return <div className={clsx(styles.heading, levels[level], center && styles.headingCenter)}>{children}</div>
+export const Heading: FC<IProps> = ({ children, level, className, center = false }) => {
+    return <div
+        className={clsx(styles.heading, levels[level], center && styles.headingCenter, className)}
+    >
+        {children}
+    </div>
 }
